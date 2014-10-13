@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='bootstrap.css' rel='stylesheet'>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+    <body>
+
+<div class container>
+
+<h1>Créer l'application rails</h1>
+
+A présent que Rails est installé, il est temps de créer l'application Rails.
+
+Objectif
+
+
+Dans cet exercice nous allons créer une nouvelle application Rails appelée flix. C'est un exercice très court qui permet  de rassembler tout ce qui est nécessaire pour qu'une lancer une application Rails.
+
+Générer le squelette de l'application.
+
+
+Chaque application Rails a une arborescence de répertoires et de fichiers commune.  Créer tout ces répertoires et fichiers serait fastidieux et sujet à erreur. Rails propose une ligne de commande qui permet de générer une application Rails fonctionnelle et épurée. Au fur et à mesure de l'exercice, nous modifierons cette arborescence et donc cette application.   
+
+
+1. Démarrons et créons un répertoire appelé rails_studio et déplaçons nous dans ce répertoire. 
+
+Si vous êtes sous OsX ou Linux, créez un répertoire (dossier) dans votre répertoire personnel (home - représenté par le caractère tilde - ~) et tapez ces deux commandes à la suite.
+
+mkdir ~/rails_studio 
+cd ~/rails_studio
+
+Si vous êtes sous Windows, tapez les commandes suivantes.
+
+cd c:\ 
+mkdir \rails_studio 
+cd \rails_studio
+
+2. Ensuite, utilisez la commande rails pour générer une nouvelle application Rails appelée flix: 
+
+rails new flix
+
+Lancer cette commande génère la création de tout les répertoires et fichiers nécessaires à l'intérieur d'un nouveau répertoire flix . Enfin, Bundler se lance automatiquement afin d'installer les gems de base requisent.
+
+3. Continuons et déplaçons nous dans le réperoire flix:
+
+cd flix
+
+4. Ouvrez le répertoire dans l'éditeur de texte Sublime Text en tapant sous Osx et Unix:
+
+subl . (Il y a un espace entre subl et le point)
+
+Sous Windows, ouvrez Sublime Text et faite File > Open Folder ... pour ouvrir le répertoire flix.
+
+
+2. Lancer l'application.
+
+1. Dans le répertoire flix, démarrez votre nouvelle application Rails en tapant:
+
+rails s (on peut aussi taper rails server ) 
+
+    Cette commande lance un serveur web léger appelé WEBrick. Après quelques vous devriez voir quelque chose comme cela:
+
+
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:3000 
+=> Call with -d to detach 
+=> Ctrl-C to shutdown server 
+[2012-11-20 12:21:37] INFO WEBrick 1.3.1
+[2012-11-20 12:21:37] INFO ruby 1.9.3 (2012-11-10) [x86_64-darwin12.2.0] 
+[2012-11-20 12:21:37] INFO WEBrick::HTTPServer#start: pid=80554 port=3000
+
+
+Vous avez à présent un serveur web écoutant sur le port 3000 de votre machine.
+
+2. Ouvrez votre navigateur web et entrez l'URL http://0.0.0.0:3000 ou http://localhost:3000, vous devriez afficher ceci...
+
+
+Page d&#39;accueil de rails, une fois le serveur lancé - rails s
+
+
+
+
+
+
+3. En tant que squelette, cette application ne propose pas grand chose à voir (pas encore...), mais c'est toujours une bonne chose de vérifier que tout fonctionne avant de commencer les modifications. En cliquant sur "About your application’s environment", vous afficherez une liste dynamiquement générée indiquant votre version de Ruby, de Rails ainsi que le gems installées.
+
+4. C'est à présent une bonne idée de localiser le lien "Rails API" et de l'ajouter dans vos signets pour une utilisation future.
+ 
+5. Enfin, ouvrez une nouvelle fenêtre de votre terminal afin d'y exécuter vos commandes futures tout en laissant fonctionner le serveur. N'oubliez pas de revenir dans votre .dossier flix dans votre terminal.
+
+Bonus Round
+
+Certains curieux aimeraient avoir des informations au sujet des répertoires et fichiers générés par la commande rails new flix .
+
+Alors voilà...
+
+. app est l'endroit ou vous passerez la plupart de votre temps, c'est là que vous mettrez votre code. Rails accorde une importance extrême à garder le code organisé; aussi ce répertoire "app" a un nombre de sous répertoire:
+
+    . assets contient des sous-répertoires dans lesquels vous stockerez vos images, vos fichiers JavaScript et vos stylesheets (feuilles de style).
+
+    . models, views, and controllers sont les répertoires justement nommés dans lesquels vous déposerez le code pour vos model, view et controller.
+
+    . helpers est l'endroit ou vous poserez des modules Ruby qui définirons des méthodes utiles pour les views (vues).
+
+    . mailers est l'endroit où vous mettrez vos classes Ruby pour générer et envoyer des e-mails.
+
+
+. bin est un dossier important. Il contient des scripts rails, par exemple.
+
+    .config C'est là que vous allez ajuster les réglages de votre application. Au début, il n'y a pas à toucher les fichiers de ce répertoire, mais au fur et à mesure de l'volution de ce cours, nous nous arrêterons aux endroits suivants:
+
+        . database.yml est le fichier dans lequel la base est configurée en fonction des environnements.
+
+        . routes.rb dresse la carte des requêtes entrantes (URLs) to application code.
+
+        . environments est un répertoire qui contient trois fichier qui permettent de définir des réglages spécifiques à chaque environnement; développement, test et production.
+
+        . initializers est un répertoire dans lequel vous mettez le code Ruby qui a besoin d'être exéccuter au démarage de l'application.
+
+        . db contient tout ce qui est en lien avec la base de données, cela inclu les fichiers de migrations et dans le cas où la base de données SQLite3 est utilisée par défault, le fichier de base de données lui                     même.
+
+        . lib contient un sous répertoire important - tasks (taches)
+
+            . tasks c'est là que vous mettrez vos Rake task (taches Rake) concernant votre application; ces fichiers ont une extension .rake
+
+        . log c'est là que sont stockés tous les évènements concernant votre application. Chaque environnement à son propre fichier log.
+
+       . public est le dossier "root" (racine) de l'application. Il contient les pages statiques du site. Par exemple 404.html est à cet endroit et est proposé quand une page demandée n'est pas présente  .
+
+       . test si on utilise test/unit, c'est là où doivent être posé les fichiers de test. Les sous-répertoires sont organisés de la même façon que dans le dossier app. Dans ce cours nous utiliserons Rspec, donc vous pouvez ignorez ce répertoire test.
+
+        . tmp c'est l'endroit où Rails stocke les fichiers temporaires nécessaires à l'application. On n'y va jamais... 
+
+        . vendor était l'endroit où on on rangeait des codes d'une tiers-partis. A présent on utilise généralement des gems qui sont déclarées dans le fichier Gemfile.rb
+
+
+        
+        <script src="js/main.js"></script>
+   </div>
+    </body>
+</html>
