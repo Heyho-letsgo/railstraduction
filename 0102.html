@@ -60,38 +60,33 @@ Si vous êtes sous Windows, tapez les commandes suivantes.
 
 <p>Page d'accueil de rails, une fois le serveur lancé</p>
 
-<img src="images/rails_serveur001.png" alt="">
+<img src="images/rails_serveur001.png" alt="Image accueil serveur lancé">
 
+<p>3. En tant que squelette, cette application ne propose pas grand chose à voir (pas encore...), mais c'est toujours une bonne chose de vérifier que tout fonctionne avant de commencer les modifications. En cliquant sur "About your application’s environment", vous afficherez une liste dynamiquement générée indiquant votre version de Ruby, de Rails ainsi que le gems installées.
+</p>
 
-
-
-3. En tant que squelette, cette application ne propose pas grand chose à voir (pas encore...), mais c'est toujours une bonne chose de vérifier que tout fonctionne avant de commencer les modifications. En cliquant sur "About your application’s environment", vous afficherez une liste dynamiquement générée indiquant votre version de Ruby, de Rails ainsi que le gems installées.
-
-4. C'est à présent une bonne idée de localiser le lien "Rails API" et de l'ajouter dans vos signets pour une utilisation future.
+<p>4. C'est à présent une bonne idée de localiser le lien <a href="#">"Rails API"</a>  et de l'ajouter dans vos signets pour une utilisation future.</p>
+<p>5. Enfin, ouvrez une nouvelle fenêtre de votre terminal afin d'y exécuter vos commandes futures tout en laissant fonctionner le serveur. N'oubliez pas de revenir dans votre .dossier flix dans votre terminal.
+</p>
  
-5. Enfin, ouvrez une nouvelle fenêtre de votre terminal afin d'y exécuter vos commandes futures tout en laissant fonctionner le serveur. N'oubliez pas de revenir dans votre .dossier flix dans votre terminal.
+<h2>Bonus Round</h2>
+<p>Certains curieux aimeraient avoir des informations au sujet des répertoires et fichiers générés par la commande rails new flix .
+</p>
 
-Bonus Round
+<p>Alors voilà...</p>
 
-Certains curieux aimeraient avoir des informations au sujet des répertoires et fichiers générés par la commande rails new flix .
+<p>. app est l'endroit ou vous passerez la plupart de votre temps, c'est là que vous mettrez votre code. Rails accorde une importance extrême à garder le code organisé; aussi ce répertoire "app" a un nombre de sous répertoire:</p>
+<p> . assets contient des sous-répertoires dans lesquels vous stockerez vos images, vos fichiers JavaScript et vos stylesheets (feuilles de style).</p>
 
-Alors voilà...
+<p> . models, views, and controllers sont les répertoires justement nommés dans lesquels vous déposerez le code pour vos model, view et controller.</p>   
+<p> . helpers est l'endroit ou vous poserez des modules Ruby qui définirons des méthodes utiles pour les views (vues).</p>   
+   
+<p>. mailers est l'endroit où vous mettrez vos classes Ruby pour générer et envoyer des e-mails.</p>  
+<p>. bin est un dossier important. Il contient des scripts rails, par exemple.</p>
+<p>.config C'est là que vous allez ajuster les réglages de votre application. Au début, il n'y a pas à toucher les fichiers de ce répertoire, mais au fur et à mesure de l'volution de ce cours, nous nous arrêterons aux endroits suivants:
+</p>
 
-. app est l'endroit ou vous passerez la plupart de votre temps, c'est là que vous mettrez votre code. Rails accorde une importance extrême à garder le code organisé; aussi ce répertoire "app" a un nombre de sous répertoire:
-
-    . assets contient des sous-répertoires dans lesquels vous stockerez vos images, vos fichiers JavaScript et vos stylesheets (feuilles de style).
-
-    . models, views, and controllers sont les répertoires justement nommés dans lesquels vous déposerez le code pour vos model, view et controller.
-
-    . helpers est l'endroit ou vous poserez des modules Ruby qui définirons des méthodes utiles pour les views (vues).
-
-    . mailers est l'endroit où vous mettrez vos classes Ruby pour générer et envoyer des e-mails.
-
-
-. bin est un dossier important. Il contient des scripts rails, par exemple.
-
-    .config C'est là que vous allez ajuster les réglages de votre application. Au début, il n'y a pas à toucher les fichiers de ce répertoire, mais au fur et à mesure de l'volution de ce cours, nous nous arrêterons aux endroits suivants:
-
+    
         . database.yml est le fichier dans lequel la base est configurée en fonction des environnements.
 
         . routes.rb dresse la carte des requêtes entrantes (URLs) to application code.
