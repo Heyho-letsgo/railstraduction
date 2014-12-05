@@ -17,166 +17,226 @@
 		<![endif]-->
 	</head>
 	<body>
-	<p>03 - Views et Controllers A pr&eacute;sent que nous avons g&eacute;n&eacute;r&eacute; un squelette d'application, il est temps de le modifier en ajoutant des fonctionnalit&eacute;s (features en anglais). La premi&egrave;re fonctionnalit&eacute; que nous voulons ajouter est une page qui listera une liste de film.Elle est par convention appel&eacute;e page &quot;index&quot;. </p>
+03 - Views et Controllers
+A présent que nous avons généré un squelette d'application, il est temps de le modifier en ajoutant des fonctionnalités (features en anglais). La première fonctionnalité que nous voulons ajouter est une page qui listera une liste de film.Elle est par convention appelée page "index". 
 
-<p>La page &quot;index&quot;affichera l'URL http://localhost:3000/movies/</p>
+La page "index"affichera l'URL http://localhost:3000/movies/
 
-<p>Pour faire en sorte que cela fonctionne, nous avons quatre taches &agrave; effectuer.</p>
+Pour faire en sorte que cela fonctionne, nous avons quatre taches à effectuer.
 
-<p>1 - Ajouter une route pour traiter les demandes d'acc&egrave;s au r&eacute;pertoire /movies</p>
+1 - Ajouter une route pour traiter les demandes d'accès au répertoire /movies
 
-<p>2 - G&eacute;n&eacute;rer un contr&ocirc;leur concernant les actions li&eacute;es aux pages du r&eacute;pertoire /movies </p>
+2 - Générer un contrôleur concernant les actions liées aux pages du répertoire /movies 
 
-<p>3 - Ajouter une action &quot;index&quot; qui pr&eacute;pare un tableau (array) de titres de film.</p>
+3 - Ajouter une action "index" qui prépare un tableau (array) de titres de film.
 
-<p>4 - Cr&eacute;er une page (view)(index.html.erb) &agrave; qui affichera dynamiquement une page HTML listant des titres de films.</p>
+4 - Créer une page (view)(index.html.erb) à qui affichera dynamiquement une page HTML listant des titres de films.
 
-<p> Nous avancerons &eacute;tape par &eacute;tape en utilisant les messages d'erreur comme guide.</p>
 
-<p>Objectif</p>
+Nous avancerons étape par étape en utilisant les messages d'erreur comme guide.
 
-<p>1. Afficher une liste de titres de films</p>
+Objectif
 
-<p>Nous commencerons par afficher une liste de titre de film en &quot;dur&quot; avant de passer &agrave; quelque chose de plus dynamique.</p>
+1. Afficher une liste de titres de films
 
-<p> 1. V&eacute;rifions que nous avons l'application flix ouverte dans le terminal</p>
+Nous commencerons par afficher une liste de titre de film en "dur" avant de passer à quelque chose de plus dynamique.
 
-<p>rails s</p>
+    1. Vérifions que nous avons l'application flix ouverte dans le terminal
 
-<p>Si l'application est d&eacute;j&agrave; ouverte sur le port 3000, vous aurez un message &quot;Adress already in use&quot;.</p>
+rails s
 
-<p> 2. Il est d'usage commun de laisser le serveur tourner dans une fen&ecirc;tre du terminal et d'en ouvrir une seconde pour ex&eacute;cuter d'autres commandes. Soyez sur d'&ecirc;tre dans la deuxi&egrave;me fen&ecirc;tre et dans le r&eacute;pertoire flix.</p>
+Si l'application est déjà ouverte sur le port 3000, vous aurez un message "Adress already in use".
 
-<p> 3. Maintenant, allez dans votre navigateur et tapez http://localhost:3000/movies. Vous devriez avoir le message d'erreur suivant</p>
+    2. Il est d'usage commun de laisser le serveur tourner dans une fenêtre du terminal et d'en ouvrir une seconde pour exécuter d'autres commandes. Soyez sur d'être dans la deuxième fenêtre et dans le répertoire flix.
 
-<p>Routing Error  No route matches [GET] &quot;/movies&quot;</p>
+    3. Maintenant, allez dans votre navigateur et tapez http://localhost:3000/movies. Vous devriez avoir le message d'erreur suivant
 
-<p>Les messages d'erreur sont vos amis. Ils essayent de vous aider &agrave; comprendre les probl&egrave;mes. Malheureusement, nous sommes habitu&eacute; &agrave; faire rim&eacute; &quot;message d'erreur&quot; avec &quot;mauvaise chose&quot;, et quand nous en voyons un, nous paniquons.</p>
+Routing Error 
+No route matches [GET] "/movies"
 
-<p>Voil&agrave; un petit secret...</p>
+Les messages d'erreur sont vos amis. Ils essayent de vous aider à comprendre les problèmes. Malheureusement, nous sommes habitué à faire rimé "message d'erreur" avec "mauvaise chose", et quand nous en voyons un, nous paniquons.
 
-<p>M&ecirc;me les meilleurs programmeurs Rails ont des messages d'erreurs--souvent. Mais ils ne paniquent pas. A la place, les bons programmeurs lisent tranquillement les messages d'erreur. Et si vous prenez le temps de comprendre ce que Rails essaye de vous dire, apr&egrave;s un certain temps vous reconna&icirc;trez (et r&eacute;parerz) rapidement les erreurs communes.</p>
+Voilà un petit secret...
 
-<p>Dans notre cas, voici ce qu'il se passe: Le navigateur web envoie une requ&ecirc;te &agrave; l'URL http://localhost:3000/movies. </p>
+Même les meilleurs programmeurs Rails ont des messages d'erreurs--souvent. Mais ils ne paniquent pas. A la place, les bons programmeurs lisent tranquillement les messages d'erreur. Et si vous prenez le temps de comprendre ce que Rails essaye de vous dire, après un certain temps vous reconnaîtrez (et réparerz) rapidement les erreurs communes.
 
-<p>http://localhost:3000 est l'adresse du serveur local que nous avons lanc&eacute; et qui concerne l'application Rails. En lui rajoutant /movies, nous lui demandons d'aller jusqu'&agrave; ce r&eacute;pertoire (et c'est de l&agrave; que vient l'erreur).</p>
+Dans notre cas, voici ce qu'il se passe: Le navigateur web envoie une requête à l'URL http://localhost:3000/movies. 
 
-<p>En effet, le routeur r&eacute;cup&egrave;re la requ&ecirc;te et essaye de trouver une route qui corresponde &agrave; &quot;GET request for /movies&quot;. Mais nous n'avons pas encore dit au routeur que faire avec ce type de requ&ecirc;te; c'est la raison de l'erreur.</p>
+http://localhost:3000 est l'adresse du serveur local que nous avons lancé et qui concerne l'application Rails. En lui rajoutant /movies, nous lui demandons d'aller jusqu'à ce répertoire (et c'est de là que vient l'erreur).
 
-<p>  4. Pour dire au routeur comment g&eacute;rer des requ&ecirc;tes, nous devons ouvrir le fichier config/routes.rb . Ce fichier ouvert, vous remarquez que de nombreuses ligne comment&eacute;es (pr&eacute;c&eacute;d&eacute;es par une #) et informent sur les diff&eacute;rentes possibilit&eacute;s de configurer ce fichier.  Nous n'en avons pas besoins; aussi supprimons les afin de n'avoir plus que :</p>
+En effet, le routeur récupère la requête et essaye de trouver une route qui corresponde à "GET request for /movies". Mais nous n'avons pas encore dit au routeur que faire avec ce type de requête; c'est la raison de l'erreur.
 
-<p>Flix::Application.routes.draw do  end </p>
 
-<p>Nous n'avons plus q'un bloc Ruby vide auquel il faut ajouter une route.</p>
+    4. Pour dire au routeur comment gérer des requêtes, nous devons ouvrir le fichier config/routes.rb . Ce fichier ouvert, vous remarquez que de nombreuses ligne commentées  (précédées par une #) et informent sur les différentes possibilités de configurer ce fichier. 
+Nous n'en avons pas besoins; aussi supprimons les afin de n'avoir plus que :
 
-<p> 5. On veut que cette route dise: va chercher (get) dans le r&eacute;pertoire /movies le fichier nomm&eacute; movies_controller.rb et regarde si il y a une action (une m&eacute;thode Ruby) qui s'appelle index.</p>
+Flix::Application.routes.draw do 
+end 
 
-<p>Par convention cela s'&eacute;crit :</p>
+Nous n'avons plus q'un bloc Ruby vide auquel il faut ajouter une route.
 
-<p>verb &quot;url&quot; => &quot;name_of_controller#name_of_action&quot;</p>
+    5. On veut que cette route dise: va chercher (get) dans le répertoire /movies le fichier nommé movies_controller.rb  et regarde si il y a une action (une méthode Ruby) qui s'appelle index.
 
-<p>et donc</p>
+Par convention cela s'écrit :
 
-<p>get &quot;movies&quot; => &quot;movies#index&quot; </p>
+verb    "url"        =>    "name_of_controller#name_of_action"
 
-<p>que l'on ins&egrave;re dans</p>
+et donc
 
-<p>Flix::Application.routes.draw do  Get &quot;movies&quot; => &quot;movies#index&quot; end </p>
+get     "movies"     =>     "movies#index" 
 
-<p> 6. Rafra&icirc;chissez votre navigateur et cette fois, vous avez un nouveau message d'erreur</p>
+que l'on insère dans
 
-<p>Routing Error  uninitialized constant MoviesController</p>
+Flix::Application.routes.draw do 
+Get     "movies"     =>     "movies#index"
+end 
 
-<p>Oh... non, encore un message d'erreur ! Super ! Vous ne paniquez pas. Vous lisez tranquillement ce qu'il dit. Il nous dit qu'il ne trouve pas le contr&ocirc;leur Movies car il n'existe pas (unitialized). Nous allons donc le cr&eacute;er.</p>
+    6. Rafraîchissez votre navigateur et cette fois, vous avez un nouveau message d'erreur
 
-<p>It tells us that the route we added is trying to do what we told it to do. It's trying to send the request to a controller. We said the name of the controller was movies, but the router applied a naming convention and went looking for a Ruby class named MoviesController. We don't have a class with that name in our project, so the next step is to create it.</p>
+Routing Error 
+uninitialized constant MoviesController
 
-<p> 7. De retour dans le terminal et dans le r&eacute;pertoire flix nous allons g&eacute;n&eacute;rer une classe MoviesController en tapant: rails generate controller movies   Par convention le nommage d'un controller DOIT &ecirc;tre pluriel. Dans ce cas, c'est &quot;movies&quot;</p>
+Oh... non, encore un message d'erreur ! Super ! Vous ne paniquez pas. Vous lisez tranquillement ce qu'il dit. Il nous dit qu'il ne trouve pas le contrôleur Movies car il n'existe pas (unitialized).
+Nous allons donc le créer.
 
-<p> 8. Cela g&eacute;n&egrave;re une classe MoviesController vide dans le r&eacute;pertoire app/controllers/movies_controller.rb qui ressemble &agrave; : class MoviesController < ApplicationController  end</p>
+It tells us that the route we added is trying to do what we told it to do. It's trying to send the request to a controller. We said the name of the controller was movies, but the router applied a naming convention and went looking for a Ruby class named MoviesController. We don't have a class with that name in our project, so the next step is to create it.
 
-<p>Bien que ce n'est pas important pour le moment, il est int&eacute;ressant de remarquer que la classe h&eacute;rite de la class ApplicationController. ApplicationController est la classe parente de tout les contr&ocirc;leurs et est situ&eacute; dans app/controllers/application_controller.rb. C'est gr&acirc;ce &agrave; cette relation d'h&eacute;ritage que la classe MoviesController sait agir comme un contr&ocirc;leur.</p>
+    7.  De retour dans le terminal et dans le répertoire flix nous allons générer une classe MoviesController en tapant:
+rails generate controller movies 
+    Par convention le nommage d'un controller DOIT être pluriel. Dans ce cas, c'est "movies"
 
-<p> 9. Rafra&icirc;chissez votre navigateur et cette fois vous avez encore une autre (diff&eacute;rente) erreur.</p>
+    8. Cela génère une classe MoviesController vide dans le répertoire app/controllers/movies_controller.rb qui ressemble à :
+class MoviesController < ApplicationController 
+end
 
-<p>Unknown action  The action 'index' could not be found for MoviesController</p>
+Bien que ce n'est pas important pour le moment, il est intéressant de remarquer que la classe hérite de la class ApplicationController.
+ApplicationController est la classe parente de tout les contrôleurs et est situé dans app/controllers/application_controller.rb.
+C'est grâce à cette relation d'héritage que la classe MoviesController sait agir comme un contrôleur.
 
-<p> Ok, nous avan&ccedil;ons. Cette fois le routeur a trouv&eacute; la classe et essaye d'appeler l'action index. C'est ce que dit la route, mais comme le dit intelligemment le message d'erreur, la classe MoviesController n'a pas de d'action (method) nomm&eacute;e index.</p>
+    9. Rafraîchissez votre navigateur et cette fois vous avez encore une autre (différente) erreur.
 
-<p> 10. Dans la classe MoviesController, d&eacute;finissez une action index vide. Rappelez-vous, une action est tout simplement une m&eacute;thode Ruby accessible au public d&eacute;finie dans une classe de contr&ocirc;leur.</p>
+Unknown action 
+The action 'index' could not be found for MoviesController
 
-<p>class MoviesController < ApplicationController  def index end end</p>
+    Ok, nous avançons. Cette fois le routeur a trouvé la classe et essaye d'appeler l'action index. C'est ce que dit la route, mais comme le dit intelligemment le message d'erreur, la classe MoviesController n'a pas de d'action (method) nommée index.
 
-<p> 11. Rafra&icirc;chissez votre navigateur et... devinez quoi ? Vous avez encore un message d'erreur ! </p>
+    10. Dans la classe MoviesController, définissez une action index vide. Rappelez-vous, une action est tout simplement une méthode Ruby accessible au public définie dans une classe de contrôleur.
 
-<p>Template is missing  Missing template movies/index ...</p>
+class MoviesController < ApplicationController 
+def index
+end
+end
 
-<p> On y est presque! Une fois encore le message d'erreur nous aide. Le routeur a avec succ&egrave;s envoy&eacute; la requ&ecirc;te &agrave; l'action index de la classe MoviesController. L'action index se lance, mais il nous manque quelquechose. Nous devons retourner une liste de titres de films au navigateur. Pour faire cela, l'action doit rendre (render) un gabarit de vue (view template) qui &agrave; son tour g&eacute;n&egrave;re du HTML. Nous avons donc cette erreur car nous n'avons pas de de view template pour l'action index.    Ehh... Attend! Notre action index est vide. Alors comment Rails sait i11l quelle vue il doit rendre ? La r&eacute;ponse courte est &quot;convention sur configuration&quot;. Rails utilise une convention de nommage. Dans ce cas, du fait que le nom de l'action est index, Rails suppose qu'il doit rechercher un fichier appel&eacute; index.html.erb dans app/views/movies. Et le message d'erreur nous dit qu'il manque ce fichier :-)</p>
+    11. Rafraîchissez votre navigateur et... devinez quoi ? Vous avez encore un message d'erreur ! 
 
-<p> 12. Cr&eacute;ez un fichier nomm&eacute; index.html.erb dans app/views/movies.  &Agrave; l'int&eacute;rieur du nouveau fichier, ajoutez l'extrait de code HTML suivant</p>
+Template is missing 
+Missing template movies/index ...
 
-<p><h1>Movies</h1>  <ul>  <li>Iron Man</li> <li>Superman</li> <li>Spider-Man</li> </ul></p>
+    On y est presque! Une fois encore le message d'erreur nous aide. Le routeur a avec succès envoyé la requête à l'action index de la classe MoviesController. L'action index se lance, mais il nous manque quelquechose. Nous devons retourner une liste de titres de films au navigateur. Pour faire cela, l'action doit rendre (render) un gabarit de vue (view template) qui à son tour génère du HTML.  Nous avons donc cette erreur car nous n'avons pas de de view template pour l'action index.
+ 
+    Ehh... Attend! Notre action index est vide. Alors comment Rails sait i11l quelle vue il doit rendre ? La réponse courte est "convention sur configuration". Rails utilise une convention de nommage. Dans ce cas, du fait que le nom de l'action est index, Rails suppose qu'il doit rechercher un fichier appelé index.html.erb dans app/views/movies. Et le message d'erreur nous dit qu'il manque ce fichier :-)
 
-<p> 13. Sauvegardez votre fichier !    14. Rafra&icirc;chissez votre navigateur, et cette fois vous verrez s'afficher une liste de titre de film...  Excellent ! A pr&eacute;sent, nous savons que notre requ&ecirc;te traverse notre application: du routeur &agrave; l'action dans le controller, puis la vue et enfin retour au web.</p>
+    12. Créez un fichier nommé index.html.erb dans app/views/movies.
+    À l'intérieur du nouveau fichier, ajoutez l'extrait de code HTML suivant
 
-<p>2. Utiliser une variable d'instance </p>
+<h1>Movies</h1> 
+<ul> 
+<li>Iron Man</li>
+<li>Superman</li>
+<li>Spider-Man</li>
+</ul>
 
-<p>Cela fonctionne, mais nous aimerions faire quelquechose de plus dynamique... La premi&egrave;re chose &agrave; faire est d'affecter de vrais responsabilit&eacute; &agrave; la vue et au controller.</p>
+    13. Sauvegardez votre fichier !
+    
+    14. Rafraîchissez votre navigateur, et cette fois vous verrez s'afficher une liste de titre de film...
+    Excellent ! A présent, nous savons que notre requête traverse notre application: du routeur à l'action dans le controller, puis la vue et enfin retour au web.
 
-<p>Actuellement la vue a une liste de titre de film cod&eacute; en dur. Nous aimerions rajouter ou retirer des films, et plus tard nous aimerions les extraire de la base de donn&eacute;e.</p>
+2. Utiliser une variable d'instance 
 
-<p>Pour cela, la vue doit &ecirc;tre concern&eacute;e uniquement par la fa&ccedil;on de savoir comment afficher les films. C'est le travail du controller de pr&eacute;parer les donn&eacute;es afin que la vue les affiche.</p>
+Cela fonctionne, mais nous aimerions faire quelquechose de plus dynamique... La première chose à faire est d'affecter de vrais responsabilité à la vue et au controller.
 
-<p>Et la fa&ccedil;on de passer des donn&eacute;es &agrave; une vue se fait en r&eacute;glant les variables d'instance. </p>
+Actuellement la vue a une liste de titre de film codé en dur. Nous aimerions rajouter ou retirer des films, et plus tard nous aimerions les extraire de la base de donnée.
 
-<p>Une variable d'instance est une variable &agrave; laquelle &agrave; un temps T est affect&eacute; une valeur. Cela peut &ecirc;tre un tableau (array), un chiffre, du texte, une image, une autre variable...</p>
+Pour cela, la vue doit être concernée uniquement par la façon de savoir comment afficher les films. C'est le travail du controller de préparer les données afin que la vue les affiche.
 
-<p> 1. Nous sommes concern&eacute; en ce moment par la view index et donc par l'action index du controller Movies (movies_contoller.rb).  Nous allons donc affecter &agrave; cette variable un objet, en l&rsquo;occurrence un tableau (array) qui contient des chaines de caract&egrave;res (string) &agrave; savoir la liste des titres de films.  Nous l'appellerons @movies</p>
+Et la façon de passer des données à une vue se fait en réglant les variables d'instance.  
 
-<p>def index @movies = ['Iron Man','Superman','Spiderman']  end</p>
+Une variable d'instance est une variable à laquelle à un temps T est affecté une valeur. Cela peut être un tableau (array), un chiffre, du texte, une image, une autre variable...
 
-<p> 2. Pour faire en sorte que les films soit accessibles dans la vue, il faut ajouter ce bout de code (snippet) ERB (Embeded Ruby) dans la vue index.html.erb <%= @movies%>    3. Rafra&icirc;chissez votre navigateur, vous devriez voir s'afficher la liste des films sous format array (tableau).  ['Iron Man','Superman','Spiderman']  Cet affichage n'est pas tr&egrave;s sympa pour l'utilisateur (not user friendly), mais on va voir ce que l'on peut faire... 3. G&eacute;n&eacute;rer la liste dynamiquement</p>
+    1. Nous sommes concerné en ce moment par la view index et donc par l'action index du controller Movies (movies_contoller.rb).
+        Nous allons donc affecter à cette variable un objet, en l’occurrence un tableau (array) qui contient des chaines de caractères (string) à savoir la liste des titres de films.
+        Nous l'appellerons @movies
 
-<p>Enfin, nous voulons remplacer la liste cod&eacute;e en dur de titres de films dans le fichier index.html.erb en une liste g&eacute;n&eacute;r&eacute;e dynamiquement qui refl&egrave;te les titres dans la variable @movies.</p>
+def index
+@movies = ['Iron Man','Superman','Spiderman']    
+end
 
-<p>Pour cela, nous allons utiliser un m&eacute;lange de HTML et de code Ruby dans le fichier index.html.erb. Nous utiliserons Ruby pour parcourir (iterate) les chaines de caract&egrave;res (string) de la variable @movies. Et pour chaque (each) titre de film, nous g&eacute;n&eacute;rerons une liste HTML d'article.</p>
+    2. Pour faire en sorte que les films soit accessibles dans la vue, il faut ajouter ce bout de code (snippet) ERB (Embeded Ruby) dans la vue index.html.erb
+<%= @movies%>
+    
+    3. Rafraîchissez votre navigateur, vous devriez voir s'afficher la liste des films sous format array (tableau).
+ ['Iron Man','Superman','Spiderman']
+    Cet affichage n'est pas très sympa pour l'utilisateur (not user friendly), mais on va voir ce que l'on peut faire...
+3. Générer la liste dynamiquement
 
-<p>C'est l&agrave; que le nom de la vue (view) est important. Le nom de notre fichier view est index.html.erb. Il se d&eacute;compose en trois parties: index est le nom de l'action, html est le type de contenue que la vue va g&eacute;n&eacute;rer, et erb (Embedded Ruby) est le systeme de gabarit utilis&eacute; pour g&eacute;n&eacute;r&eacute; le contenu</p>
+Enfin, nous voulons remplacer la liste codée en dur de titres de films dans le fichier index.html.erb en une liste générée dynamiquement qui reflète les titres dans la variable @movies.
 
-<p>Dans une application Rails, ERb (Embedded Ruby) est le syst&egrave;me de gabarit par d&eacute;faut. Il nous permet de m&eacute;langer du code Ruby avec du code HTML dans une page, puis quand la page doit &ecirc;tre affich&eacute;e, le code Embedded Ruby se lance et offre finalement une r&eacute;ponde g&eacute;n&eacute;r&eacute;e dynamiquement.</p>
+Pour cela, nous allons utiliser un mélange de HTML et de code Ruby dans le fichier index.html.erb. Nous utiliserons Ruby pour parcourir (iterate) les chaines de caractères (string) de la variable @movies. Et pour chaque (each) titre de film, nous générerons une liste HTML d'article.
 
-<p>Donc une vue Raills typique est un simple m&eacute;lange de balises(tags) HTML et de balises(tags) ERb.</p>
+C'est là que le nom de la vue (view) est important.  Le nom de notre fichier view est index.html.erb. Il se décompose en trois parties:  index est le nom de l'action, html est le type de contenue que la vue va générer, et erb (Embedded Ruby) est le systeme de gabarit utilisé pour généré le contenu
 
-<p>Les balises ERb sont de deux types: <%= du code Ruby%> lance le code ruby, affiche le r&eacute;sultat dans la vue (le = est juste &agrave; cot&eacute; du %)  <% du code Ruby%> lance le code ruby, n'affiche pas le r&eacute;sultat dans la vue (le = n'est pas &agrave; cot&eacute; du %). On peut y mettre des conditions ou autres que l'on ne souhaite pas afficher... Chaque d&eacute;veloppeur Rails de la plan&egrave;te oublie &agrave; un moment ou un autre de mettre le signe (=), et se demande pendant quelques minutes pourquoi son code ne s'affiche pas dans la vue... Cela vous arrivera aussi, vous &ecirc;tes pr&eacute;venu :)</p>
+Dans une application Rails, ERb (Embedded Ruby) est le système de gabarit par défaut. Il nous permet de mélanger du code Ruby avec du code HTML dans une page, puis quand la page doit être affichée, le code Embedded Ruby se lance et offre finalement une réponde générée dynamiquement.
 
-<p> 1. Dans le fichier index.html.erb, nous allons utiliser Ruby pour r&eacute;p&eacute;ter (to iterate) une boucle (loop) pour chaque titre de film dans le tableau (array) @movies.</p>
+Donc une vue Raills typique est un simple mélange de balises(tags) HTML et de balises(tags) ERb.
 
-<p> Pour rappel, nous avons d&eacute;finie dans le fichier movies_controller.rb une action index (def index) avec une variable @movies</p>
+Les balises ERb sont de deux types:
+<%= du code Ruby%> lance le code ruby, affiche le résultat dans la vue (le = est juste à coté du %) 
+<% du code Ruby%> lance le code ruby, n'affiche pas le résultat dans la vue (le = n'est pas à coté du %). On peut y mettre des conditions ou autres que l'on ne souhaite pas afficher...
+Chaque développeur Rails de la planète  oublie à un moment ou un autre de mettre le signe (=), et se demande pendant quelques minutes pourquoi son code ne s'affiche pas dans la vue... Cela vous arrivera aussi, vous êtes prévenu :)
 
-<p>def index  @movies = ['Iron Man','Superman','Spiderman'] end</p>
+    1. Dans le fichier index.html.erb, nous allons utiliser Ruby pour répéter (to iterate) une boucle (loop) pour chaque titre de film dans le tableau (array) @movies.
 
-<p> 2. Dans le fichier index.html.erb supprimons ce qui a &eacute;t&eacute; &eacute;crit pr&eacute;c&eacute;demment et rempla&ccedil;ons le par </p>
+    Pour rappel, nous avons définie dans le fichier movies_controller.rb une action index (def index) avec une variable @movies
 
-<p><ul> <% @movies.each do |m| %> <li><%= m %> <% end %> </ul></p>
+def index    
+@movies = ['Iron Man','Superman','Spiderman']
+end
 
-<p> 3. Nous avons s&eacute;par&eacute; l'endroit d'ou provienne les donn&eacute;es (movies_controller.rb) et l'endroit ou nous les affichons; la vue index.html.erb. Il suffit de rajouter un film dans le contriller pour qu'il apparaisse &agrave; l'affichage de la vue dans le navigateur.</p>
+    2. Dans le fichier index.html.erb supprimons ce qui a été écrit précédemment et remplaçons le par 
 
-<p> 4. Rajoutons un film: def index  @movies = ['Iron Man','Superman','Spiderman', 'Batmans'] end  </p>
+<ul>
+<% @movies.each do |m| %>
+<li><%= m %>
+<% end %>
+</ul>
 
-<p>et affichage ... Bonus Round</p>
+    3. Nous avons séparé l'endroit d'ou provienne les données (movies_controller.rb) et l'endroit ou nous les affichons; la vue index.html.erb. Il suffit de rajouter un film dans le contriller pour qu'il apparaisse à l'affichage de la vue dans le navigateur.
 
-<p>Afficher le fichier des connexions (log file)</p>
+    4. Rajoutons un film:
+def index    
+@movies = ['Iron Man','Superman','Spiderman', 'Batmans']
+end
+ 
 
-<p>Il est utile de savoir ce qu'il se passe en coulisse. Chaque fois que Rails g&eacute;n&egrave;re une requ&ecirc;te, il laisse une trace dans le fichier des connexions.</p>
+et affichage ...
+Bonus Round
 
-<p>Afficher la fen&ecirc;tre du terminal ou Rails server est lanc&eacute; et rafra&icirc;chissez la page de la liste des films. Vous devriez voir quelque chose comme ceci s'afficher dans la fen&ecirc;tre du terminal.</p>
+Afficher le fichier des connexions (log file)
 
-<p>Started GET &quot;/movies&quot; for 127.0.0.1 at 2014-04-19 10:32:19 +0200 -> C'est la requ&ecirc;te Processing by MoviesController#index as HTML -> Elle passe par le contr&ocirc;leur et par l'action index  Rendered movies/index.html.erb within layouts/application (0.1ms) -> Elle est affich&eacute; dans la vue Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms) -> C'est termin&eacute;</p>
+Il est utile de savoir ce qu'il se passe en coulisse. Chaque fois que Rails génère une requête, il laisse une trace dans le fichier des connexions.
 
-<p> A chaque fois que la page est rafra&icirc;chie ce cycle de quesion/r&eacute;ponse se passe. Allez y et rafra&icirc;chissez plusieurs fois la page pour donner &agrave; Rails un peu de travail...</p>
+Afficher la fenêtre du terminal ou Rails server est lancé et rafraîchissez la page de la liste des films.
+Vous devriez voir quelque chose comme ceci s'afficher dans la fenêtre du terminal.
 
-<p>Toutes les requ&ecirc;tes sont enregistr&eacute;es de fa&ccedil;on permanente dans le fichier log/development.log En fait, ce que l'on voit dans le terminal est un affichage de ce que Rails ajoute dans le log file (fichier des connexions)</p>
+Started GET "/movies" for 127.0.0.1 at 2014-04-19 10:32:19 +0200       -> C'est la requête
+Processing by MoviesController#index as HTML                           -> Elle passe par le contrôleur et par l'action index 
+Rendered movies/index.html.erb within layouts/application (0.1ms)      -> Elle est affiché dans la vue
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms)           -> C'est terminé
 
+
+A chaque fois que la page est rafraîchie ce cycle de quesion/réponse se passe. Allez y et rafraîchissez plusieurs fois la page pour donner à Rails un peu de travail...
+
+Toutes les requêtes sont enregistrées de façon permanente dans le fichier log/development.log En fait, ce que l'on voit dans le terminal est un affichage de ce que Rails ajoute dans le log file (fichier des connexions)  
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
