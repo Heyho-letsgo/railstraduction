@@ -35,7 +35,7 @@
                         <li>Créer une page (view)(index.html.erb) à qui affichera dynamiquement une page HTML listant des titres de films.</li>
                     </ol>
 
-<p>Nous avancerons étape par étape en utilisant les messages d'erreur comme guide.</p>
+                    <p>Nous avancerons étape par étape en utilisant les messages d'erreur comme guide.</p>
 
 <h2>Objectif</h2>
 
@@ -43,16 +43,15 @@
 
 <p>Nous commencerons par afficher une liste de titre de film en "dur" avant de passer à quelque chose de plus dynamique.</p>
 
-    1. Vérifions que nous avons l'application flix ouverte dans le terminal
+    A. Vérifions que nous avons l'application flix ouverte dans le terminal
 
                     <script src="https://gist.github.com/Heyho-letsgo/cc5b20bea33522a9b8f6.js"></script>
-rails s
+<p>Si l'application est déjà ouverte sur le port 3000, vous aurez un message "Adress already in use".</p>
 
-Si l'application est déjà ouverte sur le port 3000, vous aurez un message "Adress already in use".
 
-    2. Il est d'usage commun de laisser le serveur tourner dans une fenêtre du terminal et d'en ouvrir une seconde pour exécuter d'autres commandes. Soyez sur d'être dans la deuxième fenêtre et dans le répertoire flix.
+    B. Il est d'usage commun de laisser le serveur tourner dans une fenêtre du terminal et d'en ouvrir une seconde pour exécuter d'autres commandes. Soyez sur d'être dans la deuxième fenêtre et dans le répertoire flix.
 
-    3. Maintenant, allez dans votre navigateur et tapez http://localhost:3000/movies. Vous devriez avoir le message d'erreur suivant
+    C. Maintenant, allez dans votre navigateur et tapez http://localhost:3000/movies. Vous devriez avoir le message d'erreur suivant
 
 Routing Error 
 No route matches [GET] "/movies"
@@ -70,7 +69,7 @@ http://localhost:3000 est l'adresse du serveur local que nous avons lancé et qu
 En effet, le routeur récupère la requête et essaye de trouver une route qui corresponde à "GET request for /movies". Mais nous n'avons pas encore dit au routeur que faire avec ce type de requête; c'est la raison de l'erreur.
 
 
-    4. Pour dire au routeur comment gérer des requêtes, nous devons ouvrir le fichier config/routes.rb . Ce fichier ouvert, vous remarquez que de nombreuses ligne commentées  (précédées par une #) et informent sur les différentes possibilités de configurer ce fichier. 
+    D. Pour dire au routeur comment gérer des requêtes, nous devons ouvrir le fichier config/routes.rb . Ce fichier ouvert, vous remarquez que de nombreuses ligne commentées  (précédées par une #) et informent sur les différentes possibilités de configurer ce fichier.
 Nous n'en avons pas besoins; aussi supprimons les afin de n'avoir plus que :
 
 Flix::Application.routes.draw do 
@@ -78,7 +77,7 @@ end
 
 Nous n'avons plus q'un bloc Ruby vide auquel il faut ajouter une route.
 
-    5. On veut que cette route dise: va chercher (get) dans le répertoire /movies le fichier nommé movies_controller.rb  et regarde si il y a une action (une méthode Ruby) qui s'appelle index.
+    E. On veut que cette route dise: va chercher (get) dans le répertoire /movies le fichier nommé movies_controller.rb  et regarde si il y a une action (une méthode Ruby) qui s'appelle index.
 
 Par convention cela s'écrit :
 
