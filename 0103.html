@@ -22,25 +22,22 @@
             <div class="row">
                 <div class="col-md-9">
 <h1>03 - Views et Controllers</h1>
-                    <p>A présent que nous avons généré un squelette d'application, il est temps de le modifier en ajoutant des fonctionnalités (features en anglais). La première fonctionnalité que nous voulons ajouter est une page qui listera une liste de film.Elle est par convention appelée page "index".
+                    <p>A présent que nous avons généré un squelette d'application, il est temps de le modifier en ajoutant des fonctionnalités (features en anglais).</p>
+                    <p>La première fonctionnalité que nous voulons ajouter est une page qui listera une liste de film.</p>
+                    <p>Elle est par convention appelée page "index".</p>
+                    <p>La page "index"affichera l'URL http://localhost:3000/movies/</p>
+                    <p>Pour faire en sorte que cela fonctionne, nous avons quatre taches à effectuer.</p>
 
-La page "index"affichera l'URL http://localhost:3000/movies/</p>
+                    <ol>
+                        <li>Ajouter une route pour traiter les demandes d'accès au répertoire /movies</li>
+                        <li>Générer un contrôleur concernant les actions liées aux pages du répertoire /movies</li>
+                        <li>Ajouter une action "index" qui prépare un tableau (array) de titres de film.</li>
+                        <li>Créer une page (view)(index.html.erb) à qui affichera dynamiquement une page HTML listant des titres de films.</li>
+                    </ol>
 
+<p>Nous avancerons étape par étape en utilisant les messages d'erreur comme guide.</p>
 
-Pour faire en sorte que cela fonctionne, nous avons quatre taches à effectuer.
-
-1 - Ajouter une route pour traiter les demandes d'accès au répertoire /movies
-
-2 - Générer un contrôleur concernant les actions liées aux pages du répertoire /movies 
-
-3 - Ajouter une action "index" qui prépare un tableau (array) de titres de film.
-
-4 - Créer une page (view)(index.html.erb) à qui affichera dynamiquement une page HTML listant des titres de films.
-
-
-Nous avancerons étape par étape en utilisant les messages d'erreur comme guide.
-
-Objectif
+<h2>Objectif</h2>
 
 1. Afficher une liste de titres de films
 
