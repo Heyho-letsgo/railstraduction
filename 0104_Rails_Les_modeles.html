@@ -417,7 +417,8 @@
             ["updated_at", Tue, 22 Apr 2014 15:59:12 UTC +00:00]] (158.7ms) commit transaction
 </pre></code>
             <p>On vérifie que les données sont bien passées en faisant:</p>
-        <code><pre>» Movie.all Movie Load (1.9ms) SELECT "movies".* FROM "movies" => #, #]></pre></code>
+        <code><pre>» Movie.all
+            Movie Load (1.9ms) SELECT "movies".* FROM "movies" => #, #]></pre></code>
 
             <p>Ok, tout est la. C'est bien, mais un peu difficile à lire... On peut si on veut... installer une gem qui va
             nous améliorer ça. Jazz_Hand.</p>
