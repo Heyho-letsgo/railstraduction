@@ -50,8 +50,8 @@
       <file leaf-file-name="0105_Rails_Connexion_du_MVC.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7171875" vertical-offset="0" max-vertical-offset="2890">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.690625" vertical-offset="0" max-vertical-offset="2873">
+              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -446,7 +446,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434224599619</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="sup de code et rempl par pre">
+      <created>1434224990217</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1434224990217</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -506,7 +512,8 @@
     <MESSAGE value="Rajout de page 0105" />
     <MESSAGE value="Modification du titre" />
     <MESSAGE value="Début de mep sur cette page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début de mep sur cette page" />
+    <MESSAGE value="sup de code et rempl par pre" />
+    <option name="LAST_COMMIT_MESSAGE" value="sup de code et rempl par pre" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -872,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7171875" vertical-offset="0" max-vertical-offset="2890">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.690625" vertical-offset="0" max-vertical-offset="2873">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding />
         </state>
       </provider>
