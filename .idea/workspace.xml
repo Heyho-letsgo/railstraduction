@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2812f5-8641-4674-868f-5cbd9fd077b6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav.html" afterPath="$PROJECT_DIR$/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/onepage.html" afterPath="$PROJECT_DIR$/onepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,8 +31,18 @@
       <file leaf-file-name="onepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3329646" vertical-offset="4204" max-vertical-offset="7344">
-              <caret line="265" column="29" selection-start-line="265" selection-start-column="29" selection-end-line="265" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.8119469" vertical-offset="6440" max-vertical-offset="7344">
+              <caret line="422" column="95" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2307693" vertical-offset="529" max-vertical-offset="1462">
+              <caret line="33" column="95" selection-start-line="33" selection-start-column="95" selection-end-line="33" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -87,7 +98,6 @@
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/0105_Rails._Connexion_du_MVC.html" />
-        <option value="$PROJECT_DIR$/nav.html" />
         <option value="$PROJECT_DIR$/0102_Creer_l_application_rails.html" />
         <option value="$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html" />
         <option value="$PROJECT_DIR$/0104_Rails_Les_modeles.html" />
@@ -95,6 +105,7 @@
         <option value="$PROJECT_DIR$/Demo/demo.html" />
         <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/onepage.html" />
+        <option value="$PROJECT_DIR$/nav.html" />
       </list>
     </option>
   </component>
@@ -516,7 +527,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434371631235</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="modification de l'image backphone rajout de browwn en page 2">
+      <created>1434372679197</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1434372679197</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -602,7 +619,8 @@
     <MESSAGE value="Rajout deOnePageScroll" />
     <MESSAGE value="Suppression de dossier dans onepage-scroll-master" />
     <MESSAGE value="modification de l'image backphone" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification de l'image backphone" />
+    <MESSAGE value="modification de l'image backphone rajout de browwn en page 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification de l'image backphone rajout de browwn en page 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -854,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="586" max-vertical-offset="1462">
-          <caret line="41" column="84" selection-start-line="41" selection-start-column="84" selection-end-line="41" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0103_Views_et_Controllers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.9938743" vertical-offset="2754" max-vertical-offset="5015">
@@ -949,10 +960,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2307693" vertical-offset="529" max-vertical-offset="1462">
+          <caret line="33" column="95" selection-start-line="33" selection-start-column="95" selection-end-line="33" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/onepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3329646" vertical-offset="4204" max-vertical-offset="7344">
-          <caret line="265" column="29" selection-start-line="265" selection-start-column="29" selection-end-line="265" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.8119469" vertical-offset="6440" max-vertical-offset="7344">
+          <caret line="422" column="95" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="95" />
           <folding />
         </state>
       </provider>
