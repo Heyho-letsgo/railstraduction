@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2812f5-8641-4674-868f-5cbd9fd077b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/back-phone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/phones.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/tilted-phone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/jquery.onepage-scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/jquery.onepage-scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/jquery.onepage-scroll.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/onepage-scroll.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/onepage-scroll.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/0102_Creer_l_application_rails.html" afterPath="$PROJECT_DIR$/0102_Creer_l_application_rails.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/0104_Rails_Les_modeles.html" afterPath="$PROJECT_DIR$/0104_Rails_Les_modeles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html" afterPath="$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/prism.css" afterPath="$PROJECT_DIR$/css/prism.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/prism.js" afterPath="$PROJECT_DIR$/js/prism.js" />
+      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\bower.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\jquery.onepage-scroll.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\jquery.onepage-scroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\onepage-scroll.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="railstraduction.iws" />
@@ -72,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="demo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-81.6" vertical-offset="663" max-vertical-offset="7446">
-              <caret line="303" column="27" selection-start-line="303" selection-start-column="21" selection-end-line="303" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.9623894" vertical-offset="6457" max-vertical-offset="7531">
+              <caret line="431" column="20" selection-start-line="431" selection-start-column="20" selection-end-line="431" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -92,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.onepage-scroll.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jquery.onepage-scroll.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/jquery.onepage-scroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.583596" vertical-offset="6710" max-vertical-offset="7344">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6710" max-vertical-offset="7344">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -169,6 +159,7 @@
         <option value="$PROJECT_DIR$/0102_Creer_l_application_rails.html" />
         <option value="$PROJECT_DIR$/0105_Rails_Connexion_du_MVC.html" />
         <option value="$PROJECT_DIR$/0104_Rails_Les_modeles.html" />
+        <option value="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" />
       </list>
     </option>
   </component>
@@ -219,20 +210,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="railstraduction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="railstraduction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="railstraduction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="onepage-scroll-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -564,28 +541,40 @@
       <option name="project" value="LOCAL" />
       <updated>1434226571454</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Rajout deOnePageScroll">
+      <created>1434363997666</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1434363997666</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Rajout deOnePageScroll">
+      <created>1434364650142</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1434364650142</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4596888" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53323907" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -647,7 +636,8 @@
     <MESSAGE value="Début de mep sur cette page" />
     <MESSAGE value="sup de code et rempl par pre" />
     <MESSAGE value="Rajout de prism js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rajout de prism js" />
+    <MESSAGE value="Rajout deOnePageScroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rajout deOnePageScroll" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -989,14 +979,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-81.6" vertical-offset="663" max-vertical-offset="7446">
-          <caret line="303" column="27" selection-start-line="303" selection-start-column="21" selection-end-line="303" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/onepage-scroll.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
@@ -1007,11 +989,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/jquery.onepage-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.583596" vertical-offset="6710" max-vertical-offset="7344">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6710" max-vertical-offset="7344">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9623894" vertical-offset="6457" max-vertical-offset="7531">
+          <caret line="431" column="20" selection-start-line="431" selection-start-column="20" selection-end-line="431" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
