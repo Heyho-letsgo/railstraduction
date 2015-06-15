@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2812f5-8641-4674-868f-5cbd9fd077b6" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\jquery.onepage-scroll.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\jquery.onepage-scroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\onepage-scroll.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" afterPath="$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\back-phone.png" afterPath="$PROJECT_DIR$/Demo/back-phone.png" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\demo.html" afterPath="$PROJECT_DIR$/Demo/demo.html" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\jquery.onepage-scroll.js" afterPath="$PROJECT_DIR$/Demo/jquery.onepage-scroll.js" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\onepage-scroll.css" afterPath="$PROJECT_DIR$/Demo/onepage-scroll.css" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\phones.png" afterPath="$PROJECT_DIR$/Demo/phones.png" />
+      <change type="MOVED" beforePath="C:\Users\André\workspace\railstraduction\onepage-scroll-master\Demo\tilted-phone.png" afterPath="$PROJECT_DIR$/Demo/tilted-phone.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="railstraduction.iws" />
@@ -63,9 +63,9 @@
         </entry>
       </file>
       <file leaf-file-name="demo.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html">
+        <entry file="file://$PROJECT_DIR$/Demo/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9623894" vertical-offset="6457" max-vertical-offset="7531">
+            <state vertical-scroll-proportion="6.698009" vertical-offset="1272" max-vertical-offset="7531">
               <caret line="431" column="20" selection-start-line="431" selection-start-column="20" selection-end-line="431" selection-end-column="20" />
               <folding />
             </state>
@@ -73,7 +73,7 @@
         </entry>
       </file>
       <file leaf-file-name="onepage-scroll.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/onepage-scroll.css">
+        <entry file="file://$PROJECT_DIR$/Demo/onepage-scroll.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -83,7 +83,7 @@
         </entry>
       </file>
       <file leaf-file-name="jquery.onepage-scroll.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/jquery.onepage-scroll.js">
+        <entry file="file://$PROJECT_DIR$/Demo/jquery.onepage-scroll.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="6710" max-vertical-offset="7344">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -95,21 +95,21 @@
         </entry>
       </file>
       <file leaf-file-name="phones.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/phones.png">
+        <entry file="file://$PROJECT_DIR$/Demo/phones.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="tilted-phone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/tilted-phone.png">
+        <entry file="file://$PROJECT_DIR$/Demo/tilted-phone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="back-phone.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/back-phone.png">
+        <entry file="file://$PROJECT_DIR$/Demo/back-phone.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -223,11 +223,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="onepage-scroll-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Demo" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -241,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="Demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -299,8 +295,8 @@
       <recent name="C:\Users\André\workspace\railstraduction\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\André\workspace\railstraduction\js" />
       <recent name="C:\Users\André\workspace\railstraduction" />
+      <recent name="C:\Users\André\workspace\railstraduction\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -553,7 +549,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434364650142</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Suppression de dossier dans onepage-scroll-master">
+      <created>1434364989713</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1434364989713</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -567,7 +569,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53323907" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -637,7 +639,8 @@
     <MESSAGE value="sup de code et rempl par pre" />
     <MESSAGE value="Rajout de prism js" />
     <MESSAGE value="Rajout deOnePageScroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rajout deOnePageScroll" />
+    <MESSAGE value="Suppression de dossier dans onepage-scroll-master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression de dossier dans onepage-scroll-master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -964,22 +967,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/phones.png">
+    <entry file="file://$PROJECT_DIR$/Demo/phones.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/back-phone.png">
+    <entry file="file://$PROJECT_DIR$/Demo/back-phone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/tilted-phone.png">
+    <entry file="file://$PROJECT_DIR$/Demo/tilted-phone.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/onepage-scroll.css">
+    <entry file="file://$PROJECT_DIR$/Demo/onepage-scroll.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -987,7 +990,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/jquery.onepage-scroll.js">
+    <entry file="file://$PROJECT_DIR$/Demo/jquery.onepage-scroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6710" max-vertical-offset="7344">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -997,9 +1000,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/onepage-scroll-master/Demo/demo.html">
+    <entry file="file://$PROJECT_DIR$/Demo/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9623894" vertical-offset="6457" max-vertical-offset="7531">
+        <state vertical-scroll-proportion="6.698009" vertical-offset="1272" max-vertical-offset="7531">
           <caret line="431" column="20" selection-start-line="431" selection-start-column="20" selection-end-line="431" selection-end-column="20" />
           <folding />
         </state>
