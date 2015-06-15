@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>0102_Créer l'application_rails</title>
     <link href='css/bootstrap.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 <div id="includedContent"></div>
@@ -33,52 +34,50 @@
                 <h4>1. Démarrons et créons un répertoire appelé rails_studio et déplaçons nous dans ce répertoire.</h4>
                 <p>Si vous êtes sous OsX ou Linux, créez un répertoire (dossier) dans votre répertoire personnel (home -
                     représenté par le caractère tilde - ~) et tapez ces deux commandes à la suite.
-                    <code><pre>mkdir ~/rails_studio
-cd ~/rails_studio
-</pre>
-                    </code></p>
+                    <pre><code class="language-bash">mkdir ~/rails_studio
+                        cd ~/rails_studio</code></pre>
 
                 Si vous êtes sous Windows, tapez les commandes suivantes.
-                <code><pre>cd c:\
+                <pre><code class="language-bash">cd c:\
 mkdir \rails_studio
-cd \rails_studio</pre></code>
+cd \rails_studio</code></pre>
 
 
                 <h4>2. Ensuite, utilisez la commande rails pour générer une nouvelle application Rails appelée
                     flix:</h4>
-                    <code><pre>rails new flix
-</pre></code>
+                    <pre><code class="language-ruby">rails new flix
+                    </code></pre>
                 <p>Lancer cette commande génère la création de tout les répertoires et fichiers nécessaires à
                     l'intérieur d'un nouveau répertoire flix . Enfin, Bundler se lance automatiquement afin d'installer
                     les gems de base requisent.</p>
 
                 <h4>3. Continuons et déplaçons nous dans le réperoire flix:</h4>
-<code><pre>cd flix</pre></code>
+                <pre><code class="language-bash">cd flix</code></pre>
 
                 <h4>4. Ouvrez le répertoire dans l'éditeur de texte Sublime Text en tapant:</h4>
 
                 <p> sous Osx et Unix:</p>
-                    <code><pre>subl . //(Il y a un espace entre subl et le point)
-</pre></code>
+                    <pre><code class="language-bash">subl . //(Il y a un espace entre subl et le point)
+</code></pre>
 
                 <p>Sous Windows, ouvrez Sublime Text et faite</p>
-                <code><pre>File > Open Folder // ... pour ouvrir le répertoire flix.
-</pre></code>
+                <pre><code>File > Open Folder // ... pour ouvrir le répertoire flix.
+</code></pre>
 
                 <h3>2. Lancer l'application.</h3>
 
                 <h4>1. Dans le répertoire flix, démarrez votre nouvelle application Rails en tapant:</h4>
-                <code><pre>rails s //(on peut aussi taper rails server )</pre></code>
+                <pre><code>rails s //(on peut aussi taper rails server )</code></pre>
                 <p>Cette commande lance un serveur web léger appelé WEBrick. Après quelques vous devriez voir quelque
                     chose comme cela:</p>
-                <code><pre>=> Booting WEBrick
+                <pre><code class="language-bash">=> Booting WEBrick
 => Rails 4.0.0 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
 => Ctrl-C to shutdown server
 [2014-11-20 12:21:37] INFO WEBrick 1.3.1
 [2014-11-20 12:21:37] INFO ruby 1.9.3 (2012-11-10) [x86_64-darwin12.2.0]
 [2014-11-20 12:21:37] INFO WEBrick::HTTPServer#start: pid=80554 port=3000
-</pre></code>
+</code></pre>
                 <p>Vous avez à présent un serveur web écoutant sur le port 3000 de votre machine.</p>
 
                 <h4>2. Ouvrez votre navigateur web et entrez l'URL http://0.0.0.0:3000 ou http://localhost:3000, vous
@@ -194,6 +193,7 @@ cd \rails_studio</pre></code>
 <!-- Bootstrap JavaScript -->
 
 <script src="js/bootstrap.min.js"></script>
+<script src="js/prism.js"></script>
 
 </body>
 </html>

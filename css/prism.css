@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=css+clike+javascript+git+http+ruby&plugins=line-highlight+line-numbers+show-invisibles */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+ruby&plugins=line-highlight+line-numbers */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -222,24 +222,3 @@ pre.line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
-.token.tab:not(:empty):before,
-.token.cr:before,
-.token.lf:before {
-	color: hsl(24, 20%, 85%);
-}
-
-.token.tab:not(:empty):before {
-    content: '\21E5';
-}
-
-.token.cr:before {
-    content: '\240D';
-}
-
-.token.crlf:before {
-    content: '\240D\240A';
-}
-.token.lf:before {
-    content: '\240A';
-}
-
