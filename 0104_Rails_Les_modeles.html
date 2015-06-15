@@ -1,212 +1,212 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='css/bootstrap.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/prism.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='css/bootstrap.css' rel='stylesheet'>
+<link rel="stylesheet" href="css/prism.css">
 
-    <title>0104 Rails - Les Modèles</title>
+<title>0104 Rails - Les Modèles</title>
 
 
 </head>
 <body>
 <div id="includedContent"></div>
 <div class="container">
-    <div class="col-md-12">
-        <div class="row">
-            <h1>04 - Les modèles</h1>
+<div class="col-md-12">
+<div class="row">
+<h1>04 - Les modèles</h1>
 
-            <p>Dans l'exercice précédent nous avons fait vivre l'application en utilisant un controller et une view.
+<p>Dans l'exercice précédent nous avons fait vivre l'application en utilisant un controller et une view.
 
-                Dans cet exercice, nous allons porter notre attention sur le model dans le but d'enregistrer des films
-                dans la base de données.
-            </p>
+Dans cet exercice, nous allons porter notre attention sur le model dans le but d'enregistrer des films
+dans la base de données.
+</p>
 
-            <h2>Objectifs</h2>
-            <ul>
-                <li>générer un modèle Movie</li>
-                <li>utiliser une migration pour créer une table movies dans la base de données</li>
-                <li>créer trois films et les sauvegarder dans la table afficher les films de la table</li>
-                <li>mettre à jour les attributs des films dans la table</li>
-                <li>supprimer un film de la table</li>
-            </ul>
-            <p>A la fin nous aurons un modèle Movie qui peut
-            <ul>
-                <li>create</li>
-                <li>read</li>
-                <li>update</li>
-                <li>delete</li>
-            </ul>
-            des films dans la bases de données <strong>(CRUD)</strong>.</p>
-
-
-            <h3>1. Générer le modèle Movies et sa migration</h3>
-
-            <p>En Rails, un modèle est simplemennt une classe Ruby situé dans le répertoire app/model.</p>
-
-            <p>Le rôle d'un modèle est de fournir l'accès à des données au niveau de l'application et d'encapsuler la
-                logique métier de l'application. OK POUR MOI C'EST PAS CLAIR
-            </p>
-
-            <p> The role of a model is to provide access to application-level data and encapsulate the application's
-                business logic. Although it's not a requirement, most models in a Rails app are connected to an
-                underlying database since that's where application data is typically stored.
-            </p>
-
-            <p> Actuellement nous affichons un film uniquement par son titre en chaîne de caractère (string).
-
-            <p> A présent, nous voulons que notre film ai trois attributs:</p>
-
-            <p>
-            <ul>
-                <li>un titre</li>
-                <li>une autorisation</li>
-                <li>son chiffre d'affaire (en euros)</li>
-            </ul>
-            <p>
-                Nous afficherons les films dans la base de données avec les champs et types suivant:
-            </p>
-            <table class="table table-hover table-bordered">
-                <thead>
-                <tr>
-                    <th>name</th>
-                    <th>type</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>titre</td>
-                    <td>string</td>
-                </tr>
-                <tr>
-                    <td>authorisation</td>
-                    <td>string</td>
-                </tr>
-                <tr>
-                    <td>chiffreAffaire</td>
-                    <td>decimal</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <p>Pour faire cela nous avons besoin de créer une table dans la base de données pour enregistrer les films
-                et aussi de définir un modèle Movies qui accédera à cette table.
-            </p>
-
-            <p>Pour cela rails met à notre disposition un autre générateur.</p>
-
-            <h4>1. Juste pour avoir une idée de la façon d'utiliser ce générateur, tapez juste la ligne suivante à
-                l'intérieur du répertoire flix.
-            </h4>
-            <pre><code class="language-ruby">rails generate model</code></pre>
-
-            <p>Tout en haut de l'affichage vous verrez que ce générateur prend un nom de modèle suivi par une liste de
-                champs et de type séparée par des crochets</p>
-            <pre><code class="language-ruby">rails generate model NAME [field[:type][:index] field[:type][:index]] [options]</code></pre>
-
-            <p>la commande affiche également la liste des types de champs suportés:
-            <ul>
-                <li>string</li>
-                <li>text</li>
-                <li>integer</li>
-                <li>decimal</li>
-                <li>float</li>
-                <li>bolean</li>
-                <li>binary</li>
-                <li>date</li>
-                <li>time</li>
-                <li>datetime</li>
-                <li>primary_key</li>
-                <li>timestamp</li>
-            </ul>
-            <h4>2. A présent utilisons cette commande pour genérer un modèle nommé Movie (au singulier) avec les champs et les types ci-dessus.</h4>
-
-            <pre><code class="language-ruby">rails generate model movie titre:string autorisation:string chiffre_affaire:decimal </code></pre>
-
-            <h4>3. Ouvrez le fichier généré dans app/models/movie.rb</h4>
-
-            <p>Il devrait ressembler à ceci:</p>
-            <pre><code class="language-ruby">class Movie < ActiveRecord::Base
-    end</code></pre>
+<h2>Objectifs</h2>
+<ul>
+<li>générer un modèle Movie</li>
+<li>utiliser une migration pour créer une table movies dans la base de données</li>
+<li>créer trois films et les sauvegarder dans la table afficher les films de la table</li>
+<li>mettre à jour les attributs des films dans la table</li>
+<li>supprimer un film de la table</li>
+</ul>
+<p>A la fin nous aurons un modèle Movie qui peut
+<ul>
+<li>create</li>
+<li>read</li>
+<li>update</li>
+<li>delete</li>
+</ul>
+des films dans la bases de données <strong>(CRUD)</strong>.</p>
 
 
+<h3>1. Générer le modèle Movies et sa migration</h3>
 
-            C'est tout ce que nous avons!? Juste une classe (vide) Ruby ! Il n'y a pas d'attributs ou de méthode, pas
-            même un commentaire. La seule partie intrigante est cette héritage de la classe ActiveRecord::Base . Croyez
-            le ou non, c'est tout ce dont à besoin un modèle pour ce connecter à sa base de données.
+<p>En Rails, un modèle est simplemennt une classe Ruby situé dans le répertoire app/model.</p>
 
-            <h4>4. Le generator a aussi généré un fichier daté</h4>, de migration de base de données dans
-            db/migrate/YYYYMMDDHHMMSS_create_movies.rb.<p>Le YYYYMMDDHHMMSS est inclu dans le nom du fichier de sorte
-            que
-            la migration peut être conservée par ordre chronographique.</p>
+<p>Le rôle d'un modèle est de fournir l'accès à des données au niveau de l'application et d'encapsuler la
+logique métier de l'application. OK POUR MOI C'EST PAS CLAIR
+</p>
 
-            <p> Ouvrez ce fichier et vous devriez voir:
-                <pre><code class="language-ruby"> class CreateMovies < ActiveRecord::Migration
-    def change create_table :movies do |t|
-    t.string :titre
-    t.string :autorisation
-    t.decimal :chiffre_affaire
-    t.timestamps
-    end
-    end
-    end</code></pre>
+<p> The role of a model is to provide access to application-level data and encapsulate the application's
+business logic. Although it's not a requirement, most models in a Rails app are connected to an
+underlying database since that's where application data is typically stored.
+</p>
 
-            <p>Pensez à la migration comme a une instruction pour modifier votre base de données.</p>
+<p> Actuellement nous affichons un film uniquement par son titre en chaîne de caractère (string).
+
+<p> A présent, nous voulons que notre film ai trois attributs:</p>
+
+<p>
+<ul>
+<li>un titre</li>
+<li>une autorisation</li>
+<li>son chiffre d'affaire (en euros)</li>
+</ul>
+<p>
+Nous afficherons les films dans la base de données avec les champs et types suivant:
+</p>
+<table class="table table-hover table-bordered">
+<thead>
+<tr>
+    <th>name</th>
+    <th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>titre</td>
+    <td>string</td>
+</tr>
+<tr>
+    <td>authorisation</td>
+    <td>string</td>
+</tr>
+<tr>
+    <td>chiffreAffaire</td>
+    <td>decimal</td>
+</tr>
+</tbody>
+</table>
+
+<p>Pour faire cela nous avons besoin de créer une table dans la base de données pour enregistrer les films
+et aussi de définir un modèle Movies qui accédera à cette table.
+</p>
+
+<p>Pour cela rails met à notre disposition un autre générateur.</p>
+
+<h4>1. Juste pour avoir une idée de la façon d'utiliser ce générateur, tapez juste la ligne suivante à
+l'intérieur du répertoire flix.
+</h4>
+<pre><code class="language-ruby">rails generate model</code></pre>
+
+<p>Tout en haut de l'affichage vous verrez que ce générateur prend un nom de modèle suivi par une liste de
+champs et de type séparée par des crochets</p>
+<pre><code class="language-ruby">rails generate model NAME [field[:type][:index] field[:type][:index]] [options]</code></pre>
+
+<p>la commande affiche également la liste des types de champs suportés:
+<ul>
+<li>string</li>
+<li>text</li>
+<li>integer</li>
+<li>decimal</li>
+<li>float</li>
+<li>bolean</li>
+<li>binary</li>
+<li>date</li>
+<li>time</li>
+<li>datetime</li>
+<li>primary_key</li>
+<li>timestamp</li>
+</ul>
+<h4>2. A présent utilisons cette commande pour genérer un modèle nommé Movie (au singulier) avec les champs et les types ci-dessus.</h4>
+
+<pre><code class="language-ruby">rails generate model movie titre:string autorisation:string chiffre_affaire:decimal </code></pre>
+
+<h4>3. Ouvrez le fichier généré dans app/models/movie.rb</h4>
+
+<p>Il devrait ressembler à ceci:</p>
+<pre><code class="language-ruby">class Movie < ActiveRecord::Base
+end</code></pre>
 
 
-            <p><strong>IL EST IMPORTANT DE NOTER QUE LE NOM DU MODEL EST SINGULIER ET QUE LE NOM DE LA TABLE EST PLURIEL
-            </strong></p>
 
-            <p>Ce fichier de migration fonctionnera quelque soient les bases de données utilisées SQLite, MySQL,
-                PostgreSQL, Oracle.</p>
+C'est tout ce que nous avons!? Juste une classe (vide) Ruby ! Il n'y a pas d'attributs ou de méthode, pas
+même un commentaire. La seule partie intrigante est cette héritage de la classe ActiveRecord::Base . Croyez
+le ou non, c'est tout ce dont à besoin un modèle pour ce connecter à sa base de données.
+
+<h4>4. Le generator a aussi généré un fichier daté</h4>, de migration de base de données dans
+db/migrate/YYYYMMDDHHMMSS_create_movies.rb.<p>Le YYYYMMDDHHMMSS est inclu dans le nom du fichier de sorte
+que
+la migration peut être conservée par ordre chronographique.</p>
+
+<p> Ouvrez ce fichier et vous devriez voir:
+<pre><code class="language-ruby"> class CreateMovies < ActiveRecord::Migration
+def change create_table :movies do |t|
+t.string :titre
+t.string :autorisation
+t.decimal :chiffre_affaire
+t.timestamps
+end
+end
+end</code></pre>
+
+<p>Pensez à la migration comme a une instruction pour modifier votre base de données.</p>
 
 
-            <h3>2. Lancer la migration</h3>
+<p><strong>IL EST IMPORTANT DE NOTER QUE LE NOM DU MODEL EST SINGULIER ET QUE LE NOM DE LA TABLE EST PLURIEL
+</strong></p>
 
-            <p>Ok, nous avons généré les instructions (migrations) pour créer la table de la base de données, mais le
-                générateur ne transfère pas les instructions à la base de données; Pour cela nous devons lancer (run) la
-                migration.</p>
+<p>Ce fichier de migration fonctionnera quelque soient les bases de données utilisées SQLite, MySQL,
+PostgreSQL, Oracle.</p>
 
 
-            <h4>1. Mais quelle base de données sera modifiée quand nous lancerons la migration ?</h4>
+<h3>2. Lancer la migration</h3>
 
-            <p>Regardez le fichier
-                config/database.yml et vous verrez les choses suivantes...</p>
-            <pre><code class="language-ruby">
-    development: adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000
-    test: adapter: sqlite3 database: db/test.sqlite3 pool: 5 timeout: 5000
-    production: adapter: sqlite3 database: db/production.sqlite3 pool: 5 timeout: 5000
+<p>Ok, nous avons généré les instructions (migrations) pour créer la table de la base de données, mais le
+générateur ne transfère pas les instructions à la base de données; Pour cela nous devons lancer (run) la
+migration.</p>
+
+
+<h4>1. Mais quelle base de données sera modifiée quand nous lancerons la migration ?</h4>
+
+<p>Regardez le fichier
+config/database.yml et vous verrez les choses suivantes...</p>
+<pre><code class="language-ruby">
+development: adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000
+test: adapter: sqlite3 database: db/test.sqlite3 pool: 5 timeout: 5000
+production: adapter: sqlite3 database: db/production.sqlite3 pool: 5 timeout: 5000
 </code></pre>
 
-            <p>Le fichier YAML dit à Rails quelle base utiliser en fonction de l'environnement de fonctionnement:
-                development, test ou production. Par défaut votre application Rails fonctionne dans l’environnement
-                development. On reviendra sur ça plus tard.</p>
+<p>Le fichier YAML dit à Rails quelle base utiliser en fonction de l'environnement de fonctionnement:
+development, test ou production. Par défaut votre application Rails fonctionne dans l’environnement
+development. On reviendra sur ça plus tard.</p>
 
-            <p>Notez que la base de données configurée par défaut est SQLite. SQLite est une base légère, mono
-                utilisateur
-                et qui fonctionne très bien en développement. Les bases de données SQLite sont stockées dans des
-                fichiers
-                dans db/development.sqlite3. (Ce fichier n'existe pas encore)</p>
+<p>Notez que la base de données configurée par défaut est SQLite. SQLite est une base légère, mono
+utilisateur
+et qui fonctionne très bien en développement. Les bases de données SQLite sont stockées dans des
+fichiers
+dans db/development.sqlite3. (Ce fichier n'existe pas encore)</p>
 
-            <p>Vous n'avez pas à vous soucier du fichier database.yml à moins que vous soyez prêt à passer votre
-                application en environnement de production. Quand ce temps viendra, vous aurez besoin de changer les
-                réglages à production pour utiliser une autre base comme MySQL, PostgreSQL, Oracle ou d'autres. Mais on
-                parlera de ça plus tard.</p>
+<p>Vous n'avez pas à vous soucier du fichier database.yml à moins que vous soyez prêt à passer votre
+application en environnement de production. Quand ce temps viendra, vous aurez besoin de changer les
+réglages à production pour utiliser une autre base comme MySQL, PostgreSQL, Oracle ou d'autres. Mais on
+parlera de ça plus tard.</p>
 
-            <p>L'important à se souvenir est que nous n'avons pas besoin de configurer à présent la base de données.</p>
+<p>L'important à se souvenir est que nous n'avons pas besoin de configurer à présent la base de données.</p>
 
-            <h4>2. Maintenant lançons la migration.</h4>
+<h4>2. Maintenant lançons la migration.</h4>
 
-            <p>C'est une tache aisée que Rails automatise en utilisant l'utilitaire
-                rake. Pour voir toute les taches que rake peut exécuter, lancez la commande.</p>
+<p>C'est une tache aisée que Rails automatise en utilisant l'utilitaire
+rake. Pour voir toute les taches que rake peut exécuter, lancez la commande.</p>
 
-                <pre><code class="language-ruby">rake -T db</code></pre>
+<pre><code class="language-ruby">rake -T db</code></pre>
 
 
-            <p>Cette commande n'affiche que les fonction rake qui concerne db (base de données) .</p>
-            <pre><code class="language-ruby">
+<p>Cette commande n'affiche que les fonction rake qui concerne db (base de données) .</p>
+<pre><code class="language-ruby">
 rake db:create # Create the database from DATABASE_URL or config/database.yml for the current Rails.env (use db:create:all to create all dbs in theconfig
 rake db:drop # Drops the database using DATABASE_URL or the current Rails.env (use db:drop:all to drop all databases)
 rake db:fixtures:load # Load fixtures into the current environment's database
@@ -223,230 +223,230 @@ rake db:version # Retrieves the current schema version number
 rake test:all:db # Run tests quickly, but also reset db
 </code></pre>
 
-            <p>A partir de la liste qui s'affiche on peut trouver la commande qui lance la migration...</p>
+<p>A partir de la liste qui s'affiche on peut trouver la commande qui lance la migration...</p>
 
 
-                <pre><code class="language-ruby">rake db:migrate</code></pre>
+<pre><code class="language-ruby">rake db:migrate</code></pre>
 
 
-            <p>Vous devriez avoir ceci à l'écran.</p>
+<p>Vous devriez avoir ceci à l'écran.</p>
 
-            <pre><code class="language-ruby">
+<pre><code class="language-ruby">
 rake db:migrate == 20140420172800 CreateMovies: migrating===================================== -- create_table(:movies) -> 0.0016s == 20140420172800 CreateMovies: migrated (0.0017s) ============================</code></pre>
 
-            <p>Lancer la tache a exécuté les instructions de notre fichier de migration. La tache a parcourue tout les
-                fichiers de migration dans le répertoire db/migrate et a lancé toutes les migrations qui n'avaient pas
-                déjà été lancée. Dans notre cas, nous avons seulement un fichier de migration à lancer. Pour lancer la
-                migration,la méthode change de ce fichier de migration a été appelé, ce qui a permis de créer la table movies.</p>
+<p>Lancer la tache a exécuté les instructions de notre fichier de migration. La tache a parcourue tout les
+fichiers de migration dans le répertoire db/migrate et a lancé toutes les migrations qui n'avaient pas
+déjà été lancée. Dans notre cas, nous avons seulement un fichier de migration à lancer. Pour lancer la
+migration,la méthode change de ce fichier de migration a été appelé, ce qui a permis de créer la table movies.</p>
 
-            <h4>3. Ensuite, vérifions le statuts de la migration en lançant la task db:migrate:status</h4>
-            <pre><code class="language-ruby">rake db:migrate:status</code></pre>
+<h4>3. Ensuite, vérifions le statuts de la migration en lançant la task db:migrate:status</h4>
+<pre><code class="language-ruby">rake db:migrate:status</code></pre>
 
-            <p>
-                Vous devriez obtenir quelque chose de similaire à ça:</p>
-            <pre><code class="language-ruby">
+<p>
+Vous devriez obtenir quelque chose de similaire à ça:</p>
+<pre><code class="language-ruby">
 rake db:migrate:status
 database: /home/andrew/workspace/ror/traduction/flix/db/development.sqlite3
 Status Migration ID Migration Name -------------------------------------------------- up 20140420172800
 Create movies
-            </code></pre>
+</code></pre>
 
-            <p>
-                Notez le mot "up" dans la colonne Status. Cela veux dire que la migration est effective.
-            </p>
+<p>
+Notez le mot "up" dans la colonne Status. Cela veux dire que la migration est effective.
+</p>
 
-            <p>
-                A présent lancez à nouveau une migration en tapant :
-            </p>
-            <pre><code class="language-ruby">rake db:migrate</code> </pre>
+<p>
+A présent lancez à nouveau une migration en tapant :
+</p>
+<pre><code class="language-ruby">rake db:migrate</code> </pre>
 
 
-            <p>Cette fois vous ne devriez voir aucune sortie. C'est parce que toute les migrations ont déjà
-                été lancées.</p>
+<p>Cette fois vous ne devriez voir aucune sortie. C'est parce que toute les migrations ont déjà
+été lancées.</p>
 
-            <p>Pour l'instant, nous n'avons qu'une migration, mais dans les exercices futurs nous en créerons
-                d'autres.</p>
+<p>Pour l'instant, nous n'avons qu'une migration, mais dans les exercices futurs nous en créerons
+d'autres.</p>
 
-            <h3>3. Créer quelques films.</h3>
+<h3>3. Créer quelques films.</h3>
 
-            <p>A présent que nous avons la table « movies » et un « movie_model.rb », nous pouvons utiliser le « model »
-                pour créer, lire, update, et supprimer des films. Nous n'avons pas encore d'interface web pour ces
-                opérations, aussi nous utiliserons la console Rails à la place.</p>
+<p>A présent que nous avons la table « movies » et un « movie_model.rb », nous pouvons utiliser le « model »
+pour créer, lire, update, et supprimer des films. Nous n'avons pas encore d'interface web pour ces
+opérations, aussi nous utiliserons la console Rails à la place.</p>
 
-            <p>La console vous permet d'interagir en ligne de commande avec la base de données de votre application.</p>
+<p>La console vous permet d'interagir en ligne de commande avec la base de données de votre application.</p>
 
-            <h4>1. Placez vous dans votre dossier flix et lancez la session de console Rails en tapant :</h4>
-            <pre><code class="language-ruby">rails console (ou rails c)</code></pre>
-            <p>Une fois lancé vous afficherez un prompt (nous afficherons le prompt par >>, mais ne vous inquietez pas si
-            le votre est différents). Vous êtes à présent dans une session « irb », vous pouvez donc taper n'importe
-            quelle expressions Ruby.</p>
+<h4>1. Placez vous dans votre dossier flix et lancez la session de console Rails en tapant :</h4>
+<pre><code class="language-ruby">rails console (ou rails c)</code></pre>
+<p>Une fois lancé vous afficherez un prompt (nous afficherons le prompt par >>, mais ne vous inquietez pas si
+le votre est différents). Vous êtes à présent dans une session « irb », vous pouvez donc taper n'importe
+quelle expressions Ruby.</p>
 
-            <p>Par exemple, tapez la commande suivante pour avoir l'heure courante.</p>
+<p>Par exemple, tapez la commande suivante pour avoir l'heure courante.</p>
 
-            <pre><code class="language-ruby">2.0.0-p353 :001 > Time.now
-            => 2014-04-22 10:13:20 +0200</code></pre>
+<pre><code class="language-ruby">2.0.0-p353 :001 > Time.now
+=> 2014-04-22 10:13:20 +0200</code></pre>
 
-            <p>Notez que quand vous tapez Return, l'expression Ruby est évaluée et le résultat est affiché sur la ligne à
-            la suite de (=>)</p>
+<p>Notez que quand vous tapez Return, l'expression Ruby est évaluée et le résultat est affiché sur la ligne à
+la suite de (=>)</p>
 
-            <p>Ce qui est unique et très puissant avec cette session « irb » est qu'elle charge automatiquement
-            l'environnement Rails.</p>
+<p>Ce qui est unique et très puissant avec cette session « irb » est qu'elle charge automatiquement
+l'environnement Rails.</p>
 
-            <p>Cela veut dire que vous pouvez accéder aux composants de votre application Rails, comme vos « models », par
-            exemple, continuez en tapant :<p>
+<p>Cela veut dire que vous pouvez accéder aux composants de votre application Rails, comme vos « models », par
+exemple, continuez en tapant :<p>
 
-            <pre><code class="language-ruby">>>Movie.all</code></pre>
+<pre><code class="language-ruby">>>Movie.all</code></pre>
 
-            Vous de vriez avoir la sortie suivante...
-                <pre><code class="language-ruby">Movie Load (11.6ms) SELECT "movies".* FROM "movies"
-            => #</code></pre>
+Vous de vriez avoir la sortie suivante...
+<pre><code class="language-ruby">Movie Load (11.6ms) SELECT "movies".* FROM "movies"
+=> #</code></pre>
 
-            <p>Notez que la console affiche le SQL qui a été exécuté. Dans notre cas nous avons appelé la méthode « all »
-            et Rails a généré une requêtiee SQL « SELECT » qui a appelé tout les films de la table « movies » de la base
-            de données.</p>
+<p>Notez que la console affiche le SQL qui a été exécuté. Dans notre cas nous avons appelé la méthode « all »
+et Rails a généré une requêtiee SQL « SELECT » qui a appelé tout les films de la table « movies » de la base
+de données.</p>
 
-            <p>Nous n'avons aucun enregistrement de films dans notre base de données; nous avons donc en retour un array
-            (tableau) vide. <pre><code class="language-ruby">ActiveRecord::Relation []</code></pre>
+<p>Nous n'avons aucun enregistrement de films dans notre base de données; nous avons donc en retour un array
+(tableau) vide. <pre><code class="language-ruby">ActiveRecord::Relation []</code></pre>
 
-            <p><strong>ActiveRecord : C'est quoi ?</strong></p>
+<p><strong>ActiveRecord : C'est quoi ?</strong></p>
 
-            <p>ActiveRecord est l'outil qui permet à Rails d’interroger une base de données relationnelle (SQLite, mySQL,
-            PostgreSQL...)</p>
+<p>ActiveRecord est l'outil qui permet à Rails d’interroger une base de données relationnelle (SQLite, mySQL,
+PostgreSQL...)</p>
 
-            <h3>Créons le premier film</h3>
+<h3>Créons le premier film</h3>
 
-            <h4>1. Commençons par fabriquer (instancier) un nouvel objet "Movie" en lui assignant une variable appelée
-            "movie" que nous pourrons réutiliser plus tard.</h4>
-            <pre><code class="language-ruby"> >>movie = Movie.new</code></pre>
-            <p>On appelle le Modele "Movie" et on lui affecte la méthode ActiveRecord <code class="language-ruby">.new</code>
+<h4>1. Commençons par fabriquer (instancier) un nouvel objet "Movie" en lui assignant une variable appelée
+"movie" que nous pourrons réutiliser plus tard.</h4>
+<pre><code class="language-ruby"> >>movie = Movie.new</code></pre>
+<p>On appelle le Modele "Movie" et on lui affecte la méthode ActiveRecord <code class="language-ruby">.new</code>
 
-            <p>Vous obtenez la sortie suivante</p>
+<p>Vous obtenez la sortie suivante</p>
 
-            <pre><code class="language-ruby">=> #</code></pre>
-            <p>Ahh, c'est intéressant ! Notez que ce nouvel objet a des attributs</p>
+<pre><code class="language-ruby">=> #</code></pre>
+<p>Ahh, c'est intéressant ! Notez que ce nouvel objet a des attributs</p>
 
-            <p>Retournons à la définition de la classe Movie dans le fichier movie.rb.</p>
-            <pre><code class="language-ruby">class Movie < ActiveRecord::Base
-            end</code></pre>
+<p>Retournons à la définition de la classe Movie dans le fichier movie.rb.</p>
+<pre><code class="language-ruby">class Movie < ActiveRecord::Base
+end</code></pre>
 
-            <p>On voit que la class Movie hérite de ActiveRecord.</p>
+<p>On voit que la class Movie hérite de ActiveRecord.</p>
 
-            <p>ActiveRecord est un outil qui permet de travailer avec des bases de données relationelles.</p>
+<p>ActiveRecord est un outil qui permet de travailer avec des bases de données relationelles.</p>
 
-            <p>Cela dit à Rails d'utiliser ActiveRecord pour travailler (create, read, update, read) avec la base de
-            données). ActiveRecord est activé par défaut en Rails. (Il y a d'autres outils outils ORM qui existent, mais
-            bon...)</p>
+<p>Cela dit à Rails d'utiliser ActiveRecord pour travailler (create, read, update, read) avec la base de
+données). ActiveRecord est activé par défaut en Rails. (Il y a d'autres outils outils ORM qui existent, mais
+bon...)</p>
 
-            <h4>2. Revenons à l'object movie dans la console; tout ses attributs ont actuellement la valeur "nil". Modifions
-            cela en assignant une valeur à l'attribut "titre".</h4>
-            <pre><code class="language-ruby"> >>movie.titre = 'Iron Man' => "Iron Man"</code></pre>
+<h4>2. Revenons à l'object movie dans la console; tout ses attributs ont actuellement la valeur "nil". Modifions
+cela en assignant une valeur à l'attribut "titre".</h4>
+<pre><code class="language-ruby"> >>movie.titre = 'Iron Man' => "Iron Man"</code></pre>
 
-            <p>On affiche le titre en tapant:</p>
-            <pre><code class="language-ruby">movie.titre = 'Iron Man' => "Iron Man"</code></pre>
-            <h4>3. A présent assignons des valeurs à autorisation (string) et à chiffre_affaire (integer)</h4>
-            <pre><code class="language-ruby">2.0.0-p353 :006 > movie.autorisation = "Plus de 10 ans" => "Plus de 10 ans" 2.0.0-p353 :007 >
-            movie.chiffre_affaire = 300000000 => 300000000</code></pre>
+<p>On affiche le titre en tapant:</p>
+<pre><code class="language-ruby">movie.titre = 'Iron Man' => "Iron Man"</code></pre>
+<h4>3. A présent assignons des valeurs à autorisation (string) et à chiffre_affaire (integer)</h4>
+<pre><code class="language-ruby">2.0.0-p353 :006 > movie.autorisation = "Plus de 10 ans" => "Plus de 10 ans" 2.0.0-p353 :007 >
+movie.chiffre_affaire = 300000000 => 300000000</code></pre>
 
-            <h4>4. Rappelez vous que nous avons ajouter avec la méthode .new la possibilité d'un nouvel enregistrement;</h4><p>
-            cependant, il n'est pas actuellement réellement enregistré dans la base. Pour cela, nous allons utiliser la
-            méthode .save</p>
-            <pre><code class="language-ruby"> >>movie.save
+<h4>4. Rappelez vous que nous avons ajouter avec la méthode .new la possibilité d'un nouvel enregistrement;</h4><p>
+cependant, il n'est pas actuellement réellement enregistré dans la base. Pour cela, nous allons utiliser la
+méthode .save</p>
+<pre><code class="language-ruby"> >>movie.save
 (0.3ms) begin transaction SQL (60.3ms) INSERT INTO "movies" ("autorisation", "chiffre_affaire",
 "created_at", "titre", "updated_at") VALUES (?, ?, ?, ?, ?) [["autorisation", "Plus de 10 ans"],
 ["chiffre_affaire", 300000000], ["created_at", Tue, 22 Apr 2014 11:26:11 UTC +00:00], ["titre", "Iron Man"],
 ["updated_at", Tue, 22 Apr 2014 11:26:11 UTC +00:00]] (142.5ms) commit transaction => true
 </code></pre>
-            <p>
-            On peut afficher l'identifiant de l'enregistrement
+<p>
+On peut afficher l'identifiant de l'enregistrement
 </p>
-            <pre><code class="language-ruby"> > movie.id => 1</code></pre>
+<pre><code class="language-ruby"> > movie.id => 1</code></pre>
 
-            <p>On peut afficher l'identifiant de la date de création</p>
+<p>On peut afficher l'identifiant de la date de création</p>
 
-            <pre><code class="language-ruby"> > movie.created_at => Tue, 22 Apr 2014 11:26:11 UTC +00:00</code></pre>
+<pre><code class="language-ruby"> > movie.created_at => Tue, 22 Apr 2014 11:26:11 UTC +00:00</code></pre>
 
-            <p>et de la date de modification</p>
-            <pre><code class="language-ruby"> > movie.updated_at => Tue, 22 Apr 2014 11:44:58 UTC +00:00 </code></pre>
+<p>et de la date de modification</p>
+<pre><code class="language-ruby"> > movie.updated_at => Tue, 22 Apr 2014 11:44:58 UTC +00:00 </code></pre>
 
-            <p>Si on rappelle l'affichage de tout les films, on obtient un array (tableau)</p>
+<p>Si on rappelle l'affichage de tout les films, on obtient un array (tableau)</p>
 
-            <pre><code class="language-ruby"> > Movie.all Movie Load (0.5ms) SELECT "movies".* FROM "movies" => #]></code></pre>
+<pre><code class="language-ruby"> > Movie.all Movie Load (0.5ms) SELECT "movies".* FROM "movies" => #]></code></pre>
 
-            <p>On peut aussi compter le nombre d'enregistrements.</p>
-            <pre><code class="language-ruby"> > Movie.count (0.2ms) SELECT COUNT(*) FROM "movies" => 1</code></pre>
+<p>On peut aussi compter le nombre d'enregistrements.</p>
+<pre><code class="language-ruby"> > Movie.count (0.2ms) SELECT COUNT(*) FROM "movies" => 1</code></pre>
 
-            <p>Afficher le premier enregistrement.</p>
-            <pre><code class="language-ruby"> > Movie.first Movie Load (0.3ms) SELECT "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT 1 => #</code></pre>
+<p>Afficher le premier enregistrement.</p>
+<pre><code class="language-ruby"> > Movie.first Movie Load (0.3ms) SELECT "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT 1 => #</code></pre>
 
-            <h4>Créer un second film.</h4>
+<h4>Créer un second film.</h4>
 
-            <p>Maintenant, utilisons ce que nous venons d'apprendre en créant un second film dans la base de données, mais
-            en faisant légèrement différemment cette fois.</p>
+<p>Maintenant, utilisons ce que nous venons d'apprendre en créant un second film dans la base de données, mais
+en faisant légèrement différemment cette fois.</p>
 
-            <p>Pour créer notre premier film, nous avons utilisé la méthode .new à l'objet Movie et lui avons affecté des
-            attributs (nom et valeur) de façon individuelle.</p>
+<p>Pour créer notre premier film, nous avons utilisé la méthode .new à l'objet Movie et lui avons affecté des
+attributs (nom et valeur) de façon individuelle.</p>
 
-            <p>Cette fois, pour créer un second film, appelons la méthode .new et passons lui les attributs à la suite dans
-            une table de hachage... (a hash) (en gros mettons les à la ligne les uns après les autres)</p>
+<p>Cette fois, pour créer un second film, appelons la méthode .new et passons lui les attributs à la suite dans
+une table de hachage... (a hash) (en gros mettons les à la ligne les uns après les autres)</p>
 
-            <p>ATTENTION : ON NE PEUT PAS PASSER UN HASH DE LA MÊME FAÇON QU'EN PASSANT LES VALEURS INDIVIDUELLEMENT. On ne
-            peut pas faire </p><pre><code class="language-ruby">m=Movie.new et m(titre: "superman", autorisation:"blablabla", chiifre_affaire=285000000).</code></pre>
+<p>ATTENTION : ON NE PEUT PAS PASSER UN HASH DE LA MÊME FAÇON QU'EN PASSANT LES VALEURS INDIVIDUELLEMENT. On ne
+peut pas faire </p><pre><code class="language-ruby">m=Movie.new et m(titre: "superman", autorisation:"blablabla", chiifre_affaire=285000000).</code></pre>
 
-            <p>ON NE PEUT PAS FAIRE NON PLUS</p>
-            <pre><code class="language-ruby">> Movie.new(titre: "Superman", autorisation: "Plus de 8 ans", chiffre_affaire:
-            285000000)</code></pre><p> Même si le résultat est:</p>
-            <pre><code class="language-ruby">=> #</code></pre><p>
+<p>ON NE PEUT PAS FAIRE NON PLUS</p>
+<pre><code class="language-ruby">> Movie.new(titre: "Superman", autorisation: "Plus de 8 ans", chiffre_affaire:
+285000000)</code></pre><p> Même si le résultat est:</p>
+<pre><code class="language-ruby">=> #</code></pre><p>
 
-        </p> Car dans ce cas on ne peut pas enregistrer les valeurs.</div>
-        <p>IL FAUT DÉCLARER UNE VARIABLE POUR ENSUITE POUVOIR AGIR DESSUS (.save)
-            <pre><code class="language-ruby">movie=Movie.new(titre: "Superman",
-            autorisation: "Plus de 8 ans", chiffre_affaire: 285000000) => #</code></pre>
+</p> Car dans ce cas on ne peut pas enregistrer les valeurs.</div>
+<p>IL FAUT DÉCLARER UNE VARIABLE POUR ENSUITE POUVOIR AGIR DESSUS (.save)
+<pre><code class="language-ruby">movie=Movie.new(titre: "Superman",
+autorisation: "Plus de 8 ans", chiffre_affaire: 285000000) => #</code></pre>
 
-            <p>On remarque que les champs "id", "created_at" et "updated_at" sont "nil" pour l'instant. En effet, tant que
-            l'on a pas utilisé la méthode .save à la classe Movie, les enregistremens ne sont pas enregistrés dans la
-            table de la base de données. Donc il faut faire:</p>
-        <pre><code class="language-ruby">movie.save</code></pre>
+<p>On remarque que les champs "id", "created_at" et "updated_at" sont "nil" pour l'instant. En effet, tant que
+l'on a pas utilisé la méthode .save à la classe Movie, les enregistremens ne sont pas enregistrés dans la
+table de la base de données. Donc il faut faire:</p>
+<pre><code class="language-ruby">movie.save</code></pre>
 
-            <p>qui donne</p>
-        <pre><code class="language-ruby">(30.7ms) begin transaction SQL (538.3ms) INSERT INTO "movies" ("autorisation", "chiffre_affaire",
-            "created_at", "titre", "updated_at") VALUES (?, ?, ?, ?, ?) [["autorisation", "Plus de 8 ans"],
-            ["chiffre_affaire", 285000000], ["created_at", Tue, 22 Apr 2014 15:59:12 UTC +00:00], ["titre", "Superman"],
-            ["updated_at", Tue, 22 Apr 2014 15:59:12 UTC +00:00]] (158.7ms) commit transaction
+<p>qui donne</p>
+<pre><code class="language-ruby">(30.7ms) begin transaction SQL (538.3ms) INSERT INTO "movies" ("autorisation", "chiffre_affaire",
+"created_at", "titre", "updated_at") VALUES (?, ?, ?, ?, ?) [["autorisation", "Plus de 8 ans"],
+["chiffre_affaire", 285000000], ["created_at", Tue, 22 Apr 2014 15:59:12 UTC +00:00], ["titre", "Superman"],
+["updated_at", Tue, 22 Apr 2014 15:59:12 UTC +00:00]] (158.7ms) commit transaction
 </code></pre>
-            <p>On vérifie que les données sont bien passées en faisant:</p>
-        <pre><code class="language-ruby">» Movie.all
-            Movie Load (1.9ms) SELECT "movies".* FROM "movies" => #, #]></code></pre>
+<p>On vérifie que les données sont bien passées en faisant:</p>
+<pre><code class="language-ruby">» Movie.all
+Movie Load (1.9ms) SELECT "movies".* FROM "movies" => #, #]></code></pre>
 
-            <p>Ok, tout est la. C'est bien, mais un peu difficile à lire... On peut si on veut... installer une gem qui va
-            nous améliorer ça. Jazz_Hand.</p>
+<p>Ok, tout est la. C'est bien, mais un peu difficile à lire... On peut si on veut... installer une gem qui va
+nous améliorer ça. Jazz_Hand.</p>
 
-            <p>On ouvre le fichier flix/Gemfile.rb et on rajoute ce qui suit</p>
+<p>On ouvre le fichier flix/Gemfile.rb et on rajoute ce qui suit</p>
 
-        <pre><code class="language-ruby">################### # Gem rajoutée
-        gem 'jazz_hands' #</code></pre>
-                <p>jazz hand permet d'afficher de façon organisée les lignes de la consoles https://github.com/nixme/jazz_hands
-                    <pre><code class="language-ruby"># faire rails c puis Hirb.enable</code></pre>
+<pre><code class="language-ruby">################### # Gem rajoutée
+gem 'jazz_hands' #</code></pre>
+<p>jazz hand permet d'afficher de façon organisée les lignes de la consoles https://github.com/nixme/jazz_hands
+    <pre><code class="language-ruby"># faire rails c puis Hirb.enable</code></pre>
 
-            <p># on peut en rajouter d'autres....
+<p># on peut en rajouter d'autres....
 
-            ###################
+###################
 
-            On enregistre le fichier, on retourne dans le terminal dans le répertoire flix et on tape</p>
-                <pre><code class="language-ruby">bundle</code></pre>
+On enregistre le fichier, on retourne dans le terminal dans le répertoire flix et on tape</p>
+<pre><code class="language-ruby">bundle</code></pre>
 
-            On va sur la fenêtre du terminal de la console, on quitte la console
+On va sur la fenêtre du terminal de la console, on quitte la console
 
-                <pre><code class="language-ruby">exit</code></pre>
+<pre><code class="language-ruby">exit</code></pre>
 
-            On relance la console
-                <pre><code class="language-ruby">rails c</code></pre>
+On relance la console
+<pre><code class="language-ruby">rails c</code></pre>
 
-            Puis on tape<pre><code class="language-ruby">Hirb.enable</code></pre>
+Puis on tape<pre><code class="language-ruby">Hirb.enable</code></pre>
 
-            et enfin<pre><code class="language-ruby">Movie.all</code></pre>
+et enfin<pre><code class="language-ruby">Movie.all</code></pre>
 
-            Tadada
-                <pre><code class="language-ruby">
+Tadada
+<pre><code class="language-ruby">
 Movie.all Movie Load (1.9ms) SELECT "movies".* FROM "movies"
 +----+----------+----------------+-----------------+-------------------------+-------------------------+ |
 id | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -456,10 +456,10 @@ id | titre | autorisation | chiffre_affaire | created_at | updated_at |
 +----+----------+----------------+-----------------+-------------------------+-------------------------+ 2
 rows in set</code></pre>
 
-            C'est mieux et plus clair... N'est il pas ?
+C'est mieux et plus clair... N'est il pas ?
 
-            A nouveau pour pratiquer, trouvons le dernier enregistrement.
-                <pre><code class="language-ruby">
+A nouveau pour pratiquer, trouvons le dernier enregistrement.
+<pre><code class="language-ruby">
 » Movie.last! Movie Load (0.6ms) SELECT "movies".* FROM "movies" ORDER BY "movies"."id" DESC LIMIT 1
 +----+----------+---------------+-----------------+-------------------------+-------------------------+ | id
 | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -468,22 +468,22 @@ rows in set</code></pre>
 +----+----------+---------------+-----------------+-------------------------+-------------------------+ 1
 row in set</code></pre>
 
-            Créons un troisième film On crée
-                <pre><code class="language-ruby">
+Créons un troisième film On crée
+<pre><code class="language-ruby">
 flix » movie=Movie.new(titre:"batman", autorisation:"Plus de 12 ans", chiffre_affaire:400000000)
 +----+--------+----------------+-----------------+------------+------------+ | id | titre | autorisation |
 chiffre_affaire | created_at | updated_at |
 +----+--------+----------------+-----------------+------------+------------+ | | batman | Plus de 12 ans |
 400000000 | | | +----+--------+----------------+-----------------+------------+------------+ 1 row in set
 </code></pre>
-            On enregistre
-                <pre><code class="language-ruby">
+On enregistre
+<pre><code class="language-ruby">
 flix » movie.save (0.1ms) begin transaction SQL (43.0ms) INSERT INTO "movies" ("autorisation",
 "chiffre_affaire", "created_at", "titre", "updated_at") VALUES (?, ?, ?, ?, ?) [["autorisation", "Plus de 12
 ans"], ["chiffre_affaire", 400000000], ["created_at", Tue, 22 Apr 2014 16:53:08 UTC +00:00], ["titre",
 "batman"], ["updated_at", Tue, 22 Apr 2014 16:53:08 UTC +00:00]] (152.9ms) commit transaction => true
 </code></pre>
-            On affiche<pre><code class="language-ruby">
+On affiche<pre><code class="language-ruby">
 flix » Movie.all Movie Load (0.5ms) SELECT "movies".* FROM "movies"
 +----+----------+----------------+-----------------+-------------------------+-------------------------+ |
 id | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -494,18 +494,18 @@ ans | 400000000 | 2014-04-22 16:53:08 UTC | 2014-04-22 16:53:08 UTC |
 +----+----------+----------------+-----------------+-------------------------+-------------------------+ 3
 rows in set</code></pre>
 
-            4. Mettre à jour un film
+4. Mettre à jour un film
 
-            Je viens de me rendre compte que j'ai écrit batman en oubliant de mettre une majuscule... Je dois donc le
-            modifier...
+Je viens de me rendre compte que j'ai écrit batman en oubliant de mettre une majuscule... Je dois donc le
+modifier...
 
-            La classe Movie hérite de nombreuses méthode (graçe à ActiveRecord). Par exemple, la méthode "find" prend un
-            id comme paramètre et retourne et retourne le film de cette clé primaire.
+La classe Movie hérite de nombreuses méthode (graçe à ActiveRecord). Par exemple, la méthode "find" prend un
+id comme paramètre et retourne et retourne le film de cette clé primaire.
 
-            Dans la console, trouvons le film "batman" en utilisant sa clé primaire.
+Dans la console, trouvons le film "batman" en utilisant sa clé primaire.
 
-            On déclare une variable m qui est égale au film dont l'id est 3
-                <pre><code class="language-ruby">
+On déclare une variable m qui est égale au film dont l'id est 3
+<pre><code class="language-ruby">
 m=Movie.find(3) Movie Load (0.4ms) SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1 [["id",
 3]] +----+--------+----------------+-----------------+-------------------------+-------------------------+ |
 id | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -513,23 +513,23 @@ id | titre | autorisation | chiffre_affaire | created_at | updated_at |
 batman | Plus de 12 ans | 400000000 | 2014-04-22 16:53:08 UTC | 2014-04-22 16:53:08 UTC |
 +----+--------+----------------+-----------------+-------------------------+-------------------------+ 1 row
 in set
-                    </code></pre>
+    </code></pre>
 
-            Puis on appelle le titre lié à cette variable
-                <pre><code class="language-ruby">
-            » m.titre="Batman" => "Batman"
+Puis on appelle le titre lié à cette variable
+<pre><code class="language-ruby">
+» m.titre="Batman" => "Batman"
 </code></pre>
-            Puis on sauvegarde
-                <pre><code class="language-ruby">
+Puis on sauvegarde
+<pre><code class="language-ruby">
 » m.save (0.1ms) begin transaction SQL (0.4ms) UPDATE "movies" SET "titre" = ?, "updated_at" = ? WHERE
 "movies"."id" = 3 [["titre", "Batman"], ["updated_at", Tue, 22 Apr 2014 17:14:29 UTC +00:00]] (139.3ms)
 commit transaction => true
 </code></pre>
-            A présent, on veut modifier le titre "Iron man" en "Iron man 2" et le chiffre d'affaire à 500000000 en une
-            seule opération...
+A présent, on veut modifier le titre "Iron man" en "Iron man 2" et le chiffre d'affaire à 500000000 en une
+seule opération...
 
-            On trouve le film
-                <pre><code class="language-ruby">
+On trouve le film
+<pre><code class="language-ruby">
 » m=Movie.find(1) Movie Load (0.4ms) SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1 [["id",
 1]] +----+----------+----------------+-----------------+-------------------------+-------------------------+
 | id | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -538,36 +538,36 @@ commit transaction => true
 +----+----------+----------------+-----------------+-------------------------+-------------------------+ 1
 row in set
 </code></pre>
-            On utilise la méthode "update"
-                <pre><code class="language-ruby">
+On utilise la méthode "update"
+<pre><code class="language-ruby">
 flix » m.update(titre: "Iron Man 2", chiffre_affaire: 500000000) (0.1ms) begin transaction SQL (0.4ms)
 UPDATE "movies" SET "titre" = ?, "chiffre_affaire" = ?, "updated_at" = ? WHERE "movies"."id" = 1 [["titre",
 "Iron Man 2"], ["chiffre_affaire", 500000000], ["updated_at", Tue, 22 Apr 2014 17:23:44 UTC +00:00]]
 (164.6ms) commit transaction => true
 </code></pre>
-            On vérifie que les données sont bien passées.
-                <pre><code class="language-ruby">
-            flix » m.titre => "Iron Man 2"
+On vérifie que les données sont bien passées.
+<pre><code class="language-ruby">
+flix » m.titre => "Iron Man 2"
 
-            flix » m.chiffre_affaire => 500000000
+flix » m.chiffre_affaire => 500000000
 </code></pre>
-            <p>C'est bon !!</p>
+<p>C'est bon !!</p>
 
-            <p>La méthode "update" est très pratique, mais elle existe pour une raison encore plus importante. Dans la
-            plupart des cas, vous créerez et mettrez à jour des enregistrement soumis dans un formulaire HTML.</p>
+<p>La méthode "update" est très pratique, mais elle existe pour une raison encore plus importante. Dans la
+plupart des cas, vous créerez et mettrez à jour des enregistrement soumis dans un formulaire HTML.</p>
 
-            <p>Quand le formulaire est soumis, les noms et les valeurs de ce formulaire sont capturés dans une table de
-            hachage. Ce n'est donc pas une coïncidence si la méthode "update" passe par une table de hachage d'attributs
-            noms et valeurs... (exemple [["titre", "Iron Man 2"], ["chiffre_affaire", 500000000])</p>
+<p>Quand le formulaire est soumis, les noms et les valeurs de ce formulaire sont capturés dans une table de
+hachage. Ce n'est donc pas une coïncidence si la méthode "update" passe par une table de hachage d'attributs
+noms et valeurs... (exemple [["titre", "Iron Man 2"], ["chiffre_affaire", 500000000])</p>
 
-            <h4>5. Supprimer un film</h4>
+<h4>5. Supprimer un film</h4>
 
-            <p>Finalement nous voulons supprimer un film de la base de données. Encore une fois l'héritage ActiveRecord du
-            modèle Movie rend les choses vraiment simples.</p>
+<p>Finalement nous voulons supprimer un film de la base de données. Encore une fois l'héritage ActiveRecord du
+modèle Movie rend les choses vraiment simples.</p>
 
-            <p>Nous voulons supprimer "Superman" (ça lui apprendra...), mais nous ne connaissons pas l'id du film, il faut
-            donc le retrouver par son nom.</p>
-            <pre><code class="language-ruby">
+<p>Nous voulons supprimer "Superman" (ça lui apprendra...), mais nous ne connaissons pas l'id du film, il faut
+donc le retrouver par son nom.</p>
+<pre><code class="language-ruby">
 flix » m=Movie.find_by(titre:'Superman') Movie Load (0.2ms) SELECT "movies".* FROM "movies" WHERE
 "movies"."titre" = 'Superman' LIMIT 1
 +----+----------+---------------+-----------------+-------------------------+-------------------------+ | id
@@ -577,8 +577,8 @@ flix » m=Movie.find_by(titre:'Superman') Movie Load (0.2ms) SELECT "movies".* F
 +----+----------+---------------+-----------------+-------------------------+-------------------------+ 1
 row in set
 </code></pre>
-            Puis on utilise la méthode "destroy" pour le supprimer...
-            <pre><code class="language-ruby">
+Puis on utilise la méthode "destroy" pour le supprimer...
+<pre><code class="language-ruby">
 flix » m.destroy (0.3ms) begin transaction SQL (0.6ms) DELETE FROM "movies" WHERE "movies"."id" = ? [["id",2]] (153.8ms) commit transaction
 +----+----------+---------------+-----------------+-------------------------+-------------------------+ | id
 | titre | autorisation | chiffre_affaire | created_at | updated_at |
@@ -587,24 +587,24 @@ flix » m.destroy (0.3ms) begin transaction SQL (0.6ms) DELETE FROM "movies" WHE
 +----+----------+---------------+-----------------+-------------------------+-------------------------+
 1 row in set
 </code></pre>
-            <p>On peut vérifier que l'enregistrement a été supprimé.</p>
-            <pre><code class="language-ruby">ralils gen
+<p>On peut vérifier que l'enregistrement a été supprimé.</p>
+<pre><code class="language-ruby">ralils gen
 flix » Movie.find_by(titre: 'Superman') Movie Load (0.6ms) SELECT "movies".* FROM "movies" WHERE
 "movies"."titre" = 'Superman' LIMIT 1 => nil
 </code></pre>
-            <p>On peut à présent sortir de la console en tapant exit ou ctrl D</p>
+<p>On peut à présent sortir de la console en tapant exit ou ctrl D</p>
 
-        </div>
-    </div>
+</div>
+</div>
 
 
 
 <!-- jQuery -->
 <script src="js/jquery-1.11.3.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#includedContent").load("nav.html");
-    });
+$(document).ready(function () {
+$("#includedContent").load("nav.html");
+});
 </script>
 <!-- Bootstrap JavaScript -->
 
