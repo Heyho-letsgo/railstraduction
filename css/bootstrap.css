@@ -1070,6 +1070,18 @@ th {
 .glyphicon-menu-up:before {
   content: "\e260";
 }
+.orange{
+    color: darkorange;
+    opacity:0.7;
+}
+.rouge{
+    color: red;
+    opacity:0.7;
+}
+.vert{
+    color: greenyellow;
+    opacity:0.7;
+}
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
