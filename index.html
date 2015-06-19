@@ -7,7 +7,7 @@
     <title>Projet Web Love</title>
     <link href='css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/animate.css">
-    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -17,7 +17,10 @@
 
     <div class="jumbotron">
         <h1>En cours de dev!</h1>
-        <img src="images/122px-Ruby_on_Rails.png" class="img-responsive" alt="Logo Rails">
+
+        <a href="0102_Creer_l_application_rails.html" data-toggle="tooltip" data-placement="bottom" title="Hfkhzkooray!"  class="red-tooltip"> <img src="images/122px-Ruby_on_Rails.png" class="img-responsive" alt="Logo Rails"></a>
+
+
 
         <p>...</p>
 
@@ -52,12 +55,14 @@
 <script>
     $(document).ready(function () {
         $("#includedContent").load("nav.html");
+        $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
 
 <!-- Bootstrap JavaScript -->
 
 <script src="js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
