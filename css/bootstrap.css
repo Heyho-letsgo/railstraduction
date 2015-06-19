@@ -5858,11 +5858,13 @@ button.close {
   z-index: 1070;
   display: block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
   filter: alpha(opacity=0);
   opacity: 0;
+  color: #FFFFFF;
+  padding: 15px;
+  font-size: 12px;
 }
 .tooltip.in {
   filter: alpha(opacity=90);
@@ -5879,6 +5881,7 @@ button.close {
 .tooltip.bottom {
   padding: 5px 0;
   margin-top: 3px;
+  ;
 }
 .tooltip.left {
   padding: 0 5px;
@@ -5890,7 +5893,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-decoration: none;
-  background-color: #000;
+  background-color: #8AC007;
   border-radius: 4px;
 }
 .tooltip-arrow {
@@ -5940,7 +5943,7 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000;
+  border-bottom-color: #8AC007;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
