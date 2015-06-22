@@ -20,32 +20,32 @@
 
 <pre><code class="language-ruby"> rails generate model movie titre:string autorisation:string chiffre_affaire:decimal</code></pre>
 
-ATTENTION : Quand nous ferons référence à la table dans les fichiers de migration, cette dernière devra être au pluriel... (c'est comme ça et pas autrement :)
+<strong>ATTENTION : Quand nous ferons référence à la table dans les fichiers de migration, cette dernière devra être au pluriel... (c'est comme ça et pas autrement :)</strong>
 
+<h2>Objectifs</h2>
 
-http://railsdebutant.org/fr_guides/migrations.html
-
-
-Objectifs
-
-Oops, nous avons oublié quelques champs quand nous avons créé la table de la base de donnée! Nous aimerions rajouter un champ texte pour un résumé du film et un champ date pour sa date de sortie.
+<p>Oops, nous avons oublié quelques champs quand nous avons créé la table de la base de donnée! Nous aimerions rajouter un champ texte pour un résumé du film et un champ date pour sa date de sortie.
 Nous devons donc modifier la base de données, et cela veut dire qu'il est temps pour une nouvelle migration !
-
+</p>
+<p>
 Les migrations ne sont pas utilisé uniquement pour la création des tables de la base de données, mais elles sont également utilisées pour les modifier.
-Chaque nouvelle migration est stockée dans db/migrate et est incrémentée chronologiquement. (chaque nouveau fichier de migration créée est marquée par son moment de création ex: 20140205105035_add_fields_to_agence.rb  - YYYYMMDDHHMMSS_add_fields_to_agence.rb).
-
+Chaque nouvelle migration est stockée dans db/migrate et est incrémentée chronologiquement. (chaque nouveau fichier de migration créée est marquée par son moment de création
+   <em> ex: 20140205105035_add_fields_to_agence.rb  - YYYYMMDDHHMMSS_add_fields_to_agence.rb)</em>.
+</p>
+<p>
 Bien entendu toute modification à faire sur la base de données peut être faite par n'importe quel autre outil d'administration de base de données, mais le bénéfice d'utiliser les migrations est principalement qu'il simplifie le travail de groupe sur un même projet, qu'il garde une trace de l'historique des modifications par son marquage chronologique.
+</p>
+<p>Vous créerez de nombreuses migrations jusqu'à l'aboutissement d'une application rails. Il est important de bien les maîtriser.
+</p>
+<p>Voilà ce que nous allons faire:
+<ul>
+    <li>Générer un nouveau fichier de migration qui ajoute deux champs à la table "Movie" de la base de données.</li>
+<li>Mettre à jour les films existants afin que ces nouveaux champs aient des valeurs.</li>
+<li>Changer la page index de la liste des films afin qu'elle affiche les nouveaux champs</li>
+</ul>
+<h2>1. Ajouter de nouveaux champs à la table</h2>
 
-Vous créerez de nombreuses migrations jusqu'à l'aboutissement d'une application rails. Il est important de bien les maîtriser.
-
-Voilà ce que nous allons faire:
-- Générer un nouveau fichier de migration qui ajoute deux champs à la table "Movie" de la base de données.
-- Mettre à jour les films existants afin que ces nouveaux champs aient des valeurs.
-- Changer la page index de la liste des films afin qu'elle affiche les nouveaux champs
-
-1. Ajouter de nouveaux champs à la table
-
-Premièrement, nous avons besoins d'ajouter les deux champs suivant et leur type à la table "Movie"
+<p>Premièrement, nous avons besoins d'ajouter les deux champs suivant et leur type à la table "Movie"</p>
 
 nom            type
 
