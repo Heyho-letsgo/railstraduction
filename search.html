@@ -44,10 +44,13 @@
     <script>
         $(document).ready(function () {
             $("#includedContent").load("nav.html");
-            $('#tipue_search_input').tipuesearch();
             $('[data-toggle="tooltip"]').tooltip();
+            $('#tipue_search_input').tipuesearch({
+                'mode': 'live'
+            });
         });
     </script>
+
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

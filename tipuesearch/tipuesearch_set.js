@@ -57,3 +57,16 @@ var tipuesearch_string_10 = 'Search too short';
 var tipuesearch_string_11 = 'Should be one character or more';
 var tipuesearch_string_12 = 'Should be';
 var tipuesearch_string_13 = 'characters or more';
+
+
+var tipuesearch_pages = ["https://heyho-letsgo.github.io/railstraduction/index.html",
+    "https://heyho-letsgo.github.io/railstraduction/onepage.html",
+    "https://heyho-letsgo.github.io/railstraduction/",
+    "https://heyho-letsgo.github.io/railstraduction/0102_Creer_l_application_rails.html",
+"https://heyho-letsgo.github.io/railstraduction/0103_Views_et_Controllers.html",
+    "https://heyho-letsgo.github.io/railstraduction/0104_Rails_Les_modeles.html",
+    "https://heyho-letsgo.github.io/railstraduction/0105_Rails_Connexion_du_MVC.html",
+    "https://heyho-letsgo.github.io/railstraduction/0106_Rails_Migration.html"
+];
+
+
