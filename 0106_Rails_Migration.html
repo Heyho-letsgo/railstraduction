@@ -229,6 +229,8 @@
     Sun, 21 Oct 2012], ["updated_at", Fri, 25 Apr 2014 08:04:32 UTC +00:00]]
     (158.1ms) commit transaction
     => true
+</code></pre>
+    <pre><code class="language-ruby ">
     [57] flix » m=Movie.find_by(titre:"Iron Man 2")
     Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
     +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
@@ -266,6 +268,8 @@
     Fri, 25 Apr 2014 08:13:40 UTC +00:00]]
     (162.5ms) commit transaction
     => true
+</code></pre>
+            <pre><code class="language-ruby ">
     [61] flix » m=Movie.find(3)
     Movie Load (0.2ms) SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1 [["id", 3]]
     +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
