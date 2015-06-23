@@ -1,363 +1,363 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='css/bootstrap.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/prism.css">
-    <title>0106_Rails_Migration</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='css/bootstrap.css' rel='stylesheet'>
+<link rel="stylesheet" href="css/prism.css">
+<title>0106_Rails_Migration</title>
 
 
 </head>
 <body>
 <div id="includedContent"></div>
 <div class="container">
-    <div class="col-md-12">
-        <div class="row">
-            <h1>06 - Migrations</h1>
-            <em>Episode précédent: Nous avons créé une table "movie" en faisant :</em>
+<div class="col-md-12">
+<div class="row">
+    <h1>06 - Migrations</h1>
+    <em>Episode précédent: Nous avons créé une table "movie" en faisant :</em>
 
 <pre><code class="language-ruby"> rails generate model movie titre:string autorisation:string
-    chiffre_affaire:decimal</code></pre>
+chiffre_affaire:decimal</code></pre>
 
-            <strong>ATTENTION : Quand nous ferons référence à la table dans les fichiers de migration, cette dernière
-                devra être au pluriel... (c'est comme ça et pas autrement :)</strong>
+    <strong>ATTENTION : Quand nous ferons référence à la table dans les fichiers de migration, cette dernière
+        devra être au pluriel... (c'est comme ça et pas autrement :)</strong>
 
-            <h2>Objectifs</h2>
+    <h2>Objectifs</h2>
 
-            <p>Oops, nous avons oublié quelques champs quand nous avons créé la table de la base de donnée! Nous
-                aimerions rajouter un champ texte pour un résumé du film et un champ date pour sa date de sortie.
-                Nous devons donc modifier la base de données, et cela veut dire qu'il est temps pour une nouvelle
-                migration !
-            </p>
+    <p>Oops, nous avons oublié quelques champs quand nous avons créé la table de la base de donnée! Nous
+        aimerions rajouter un champ texte pour un résumé du film et un champ date pour sa date de sortie.
+        Nous devons donc modifier la base de données, et cela veut dire qu'il est temps pour une nouvelle
+        migration !
+    </p>
 
-            <p>
-                Les migrations ne sont pas utilisé uniquement pour la création des tables de la base de données, mais
-                elles sont également utilisées pour les modifier.
-                Chaque nouvelle migration est stockée dans db/migrate et est incrémentée chronologiquement. (chaque
-                nouveau fichier de migration créée est marquée par son moment de création
-                <em> ex: 20140205105035_add_fields_to_agence.rb - YYYYMMDDHHMMSS_add_fields_to_agence.rb)</em>.
-            </p>
+    <p>
+        Les migrations ne sont pas utilisé uniquement pour la création des tables de la base de données, mais
+        elles sont également utilisées pour les modifier.
+        Chaque nouvelle migration est stockée dans db/migrate et est incrémentée chronologiquement. (chaque
+        nouveau fichier de migration créée est marquée par son moment de création
+        <em> ex: 20140205105035_add_fields_to_agence.rb - YYYYMMDDHHMMSS_add_fields_to_agence.rb)</em>.
+    </p>
 
-            <p>
-                Bien entendu toute modification à faire sur la base de données peut être faite par n'importe quel autre
-                outil d'administration de base de données, mais le bénéfice d'utiliser les migrations est principalement
-                qu'il simplifie le travail de groupe sur un même projet, qu'il garde une trace de l'historique des
-                modifications par son marquage chronologique.
-            </p>
+    <p>
+        Bien entendu toute modification à faire sur la base de données peut être faite par n'importe quel autre
+        outil d'administration de base de données, mais le bénéfice d'utiliser les migrations est principalement
+        qu'il simplifie le travail de groupe sur un même projet, qu'il garde une trace de l'historique des
+        modifications par son marquage chronologique.
+    </p>
 
-            <p>Vous créerez de nombreuses migrations jusqu'à l'aboutissement d'une application rails. Il est important
-                de bien les maîtriser.
-            </p>
+    <p>Vous créerez de nombreuses migrations jusqu'à l'aboutissement d'une application rails. Il est important
+        de bien les maîtriser.
+    </p>
 
-            <p>Voilà ce que nous allons faire:
-            <ul>
-                <li>Générer un nouveau fichier de migration qui ajoute deux champs à la table "Movie" de la base de
-                    données.
-                </li>
-                <li>Mettre à jour les films existants afin que ces nouveaux champs aient des valeurs.</li>
-                <li>Changer la page index de la liste des films afin qu'elle affiche les nouveaux champs</li>
-            </ul>
-            <h2>1. Ajouter de nouveaux champs à la table</h2>
+    <p>Voilà ce que nous allons faire:
+    <ul>
+        <li>Générer un nouveau fichier de migration qui ajoute deux champs à la table "Movie" de la base de
+            données.
+        </li>
+        <li>Mettre à jour les films existants afin que ces nouveaux champs aient des valeurs.</li>
+        <li>Changer la page index de la liste des films afin qu'elle affiche les nouveaux champs</li>
+    </ul>
+    <h2>1. Ajouter de nouveaux champs à la table</h2>
 
-            <p>Premièrement, nous avons besoins d'ajouter les deux champs suivant et leur type à la table "Movie"</p>
+    <p>Premièrement, nous avons besoins d'ajouter les deux champs suivant et leur type à la table "Movie"</p>
 
-            nom type
+    nom type
 
-            description text
-            sortie_le date
+    description text
+    sortie_le date
 
-            <p>Notez que nous utilisons un type date pour le champs sortie_le plutôt que datetime. Cela prend du sens
-                car
-                on veut donner uniquement une date de sortie et non pas une date de sortie et une heure.
-            </p>
+    <p>Notez que nous utilisons un type date pour le champs sortie_le plutôt que datetime. Cela prend du sens
+        car
+        on veut donner uniquement une date de sortie et non pas une date de sortie et une heure.
+    </p>
 
-            <p>
-                Pour ajouter ces deux champs, nous aurons besoins de fabriquer un nouveau fichier de migration.
-            </p>
+    <p>
+        Pour ajouter ces deux champs, nous aurons besoins de fabriquer un nouveau fichier de migration.
+    </p>
 
-            <p>
-                On peut don écrire
-            </p>
+    <p>
+        On peut don écrire
+    </p>
 
 <pre><code class="language-ruby">< rails generate migration AddChampsToMovie description:text
-    sortie_le:date</code></pre>
+sortie_le:date</code></pre>
 
-            <p>En Rails, le fait d'écrire AddXXXXToNomdumodele permet de d'avoir automatiquement le fichier de migration
-                suivant.</p>
+    <p>En Rails, le fait d'écrire AddXXXXToNomdumodele permet de d'avoir automatiquement le fichier de migration
+        suivant.</p>
 <pre><code class="language-ruby">
-    20140424095612_add_champs_to_movies.rb (avec un s à la fin de movies)
+20140424095612_add_champs_to_movies.rb (avec un s à la fin de movies)
 
-    class AddChampsToMovies < ActiveRecord::Migration
-    def change
-    add_column :movies, :description, :text
-    add_column :movies, :date_sortie, :date
-    end
-    end
+class AddChampsToMovies < ActiveRecord::Migration
+def change
+add_column :movies, :description, :text
+add_column :movies, :date_sortie, :date
+end
+end
 </code></pre>
-            <p>
-                Nous pourrions également générer un migration vide (en lui donnant un nom quand même - qqchcommeca-),
-            </p>
-            <pre><code class="language-ruby">rails generate migration qqchcommeca</code></pre>
-            <p>
-                ce qui générerait comme fichier de migration (db/migrate/20140424130416_qqchcommeca.rb) suivant :
-            </p>
+    <p>
+        Nous pourrions également générer un migration vide (en lui donnant un nom quand même - qqchcommeca-),
+    </p>
+    <pre><code class="language-ruby">rails generate migration qqchcommeca</code></pre>
+    <p>
+        ce qui générerait comme fichier de migration (db/migrate/20140424130416_qqchcommeca.rb) suivant :
+    </p>
 <pre><code class="language-ruby">
-    class Qqchcommeca < ActiveRecord::Migration
-    def change
-    end
-    end
+class Qqchcommeca < ActiveRecord::Migration
+def change
+end
+end
 </code></pre>
-            <p>
-                A l'intérieur de la méthode change on peut ajouter autant de colonne que l'on veut en précisant la
-                table, le
-                nom de la colonne, et son type.
-            </p>
+    <p>
+        A l'intérieur de la méthode change on peut ajouter autant de colonne que l'on veut en précisant la
+        table, le
+        nom de la colonne, et son type.
+    </p>
 
-            <p>
-                A présent, on peut savoir où on en est dans nos migrations en tapant
-            </p>
-            <pre><code class="language-ruby">rake db:migrate:status</code></pre>
+    <p>
+        A présent, on peut savoir où on en est dans nos migrations en tapant
+    </p>
+    <pre><code class="language-ruby">rake db:migrate:status</code></pre>
 
-            <p>En fonction de vos manipulations, vous devriez voir:</p>
+    <p>En fonction de vos manipulations, vous devriez voir:</p>
 
 <pre><code class="language-ruby">database: db/development.sqlite3
 
-    Status Migration ID Migration Name
-    --------------------------------------------------
-    up 20120914152106 Create movies
-    down 20120916151045 Add champs to movies
+Status Migration ID Migration Name
+--------------------------------------------------
+up 20120914152106 Create movies
+down 20120916151045 Add champs to movies
 </code></pre>
 
-            <p>La seconde migration a un status "down" car nous n'avons pas encore lancé la migration.
-            </p>
+    <p>La seconde migration a un status "down" car nous n'avons pas encore lancé la migration.
+    </p>
 
-            <p>
-                Lancez la migration
-            </p>
+    <p>
+        Lancez la migration
+    </p>
 <pre><code class="language-ruby">
-    rake db:migrate
+rake db:migrate
 
-    == AddChampsToMovies: migrating ==============================================
-    -- add_column(:movies, :sortie_le, :date)
-    -> 0.0006s
-    -- add_column(:movies, :description, :text)
-    -> 0.0003s
-    == AddChamspsToMovies: migrated (0.0010s) =====================================
+== AddChampsToMovies: migrating ==============================================
+-- add_column(:movies, :sortie_le, :date)
+-> 0.0006s
+-- add_column(:movies, :description, :text)
+-> 0.0003s
+== AddChamspsToMovies: migrated (0.0010s) =====================================
 </code></pre>
-            <p>
-                Relancez
-            </p>
+    <p>
+        Relancez
+    </p>
 <pre><code class="language-ruby">
-    rake db:migrate:status
+rake db:migrate:status
 
-    database: db/development.sqlite3
+database: db/development.sqlite3
 
-    Status Migration ID Migration Name
-    --------------------------------------------------
-    up 20120914152106 Create movies
-    up 20120916151045 Add champs to movies
+Status Migration ID Migration Name
+--------------------------------------------------
+up 20120914152106 Create movies
+up 20120916151045 Add champs to movies
 </code></pre>
-            <p>
-                A présent nous avons lancé deux migrations. La première a créée la table "movies" et la seconde a ajouté
-                deux nouvelles colonnes à la table.
-            </p>
+    <p>
+        A présent nous avons lancé deux migrations. La première a créée la table "movies" et la seconde a ajouté
+        deux nouvelles colonnes à la table.
+    </p>
 
-            <h2>2. Mise à jour des films</h2>
+    <h2>2. Mise à jour des films</h2>
 
-            <p>
-                A présent nous avons besoins de mettre à jour les films dans notre base de données en donnant une valeur
-                aux
-                champs que nous venons juste d'ajouter. Pour cela, nous avons besoin d'atteindre chacun des films dans
-                la
-                console et d'assigner une valeur à sa description et à sa date de sortie. Et vous savez déjà comment
-                faire
-                cela !</p>
+    <p>
+        A présent nous avons besoins de mettre à jour les films dans notre base de données en donnant une valeur
+        aux
+        champs que nous venons juste d'ajouter. Pour cela, nous avons besoin d'atteindre chacun des films dans
+        la
+        console et d'assigner une valeur à sa description et à sa date de sortie. Et vous savez déjà comment
+        faire
+        cela !</p>
 
-            <p>
-                Ouvrez une nouvelle fenêtre du terminal, allez dans le répertoire « flix » (ou si vous y êtes déjà,
-                soyez
-                sur de travailler avec la dernière version de votre application Rails en utilisant la commande reload!
-                -avec
-                le point d'exclamation juste après-)</p>
+    <p>
+        Ouvrez une nouvelle fenêtre du terminal, allez dans le répertoire « flix » (ou si vous y êtes déjà,
+        soyez
+        sur de travailler avec la dernière version de votre application Rails en utilisant la commande reload!
+        -avec
+        le point d'exclamation juste après-)</p>
 <pre><code class="language-ruby">
-    flix » reload!
-    Reloading...
-    => true
+flix » reload!
+Reloading...
+=> true
 </code></pre>
-            <p>
-                Puis retrouvez le film « Iron Man 2 »</p>
+    <p>
+        Puis retrouvez le film « Iron Man 2 »</p>
 <pre><code class="language-ruby">
-    flix » m=Movie.find_by(titre:"Iron Man 2")
-    Movie Load (0.4ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 07:59:45 UTC | | |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    1 row in set
+flix » m=Movie.find_by(titre:"Iron Man 2")
+Movie Load (0.4ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 07:59:45 UTC | | |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+1 row in set
 </code></pre>
-            <p>
-                Nous voyons à présent les deux colonnes que nous venons d'ajouter.Elles n'ont pas de valeurs.
-                Rajoutons une valeur au champs "description":</p>
+    <p>
+        Nous voyons à présent les deux colonnes que nous venons d'ajouter.Elles n'ont pas de valeurs.
+        Rajoutons une valeur au champs "description":</p>
 <pre><code class="language-ruby">
-    flix » m.update(description:"Super film")
-    (0.1ms) begin transaction
-    SQL (0.4ms) UPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = 1 [["description",
-    "Super film"], ["updated_at", Fri, 25 Apr 2014 08:03:42 UTC +00:00]]
-    (160.8ms) commit transaction
-    => true</code></pre>
+flix » m.update(description:"Super film")
+(0.1ms) begin transaction
+SQL (0.4ms) UPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = 1 [["description",
+"Super film"], ["updated_at", Fri, 25 Apr 2014 08:03:42 UTC +00:00]]
+(160.8ms) commit transaction
+=> true</code></pre>
 <pre><code class="language-ruby">
-    [55] flix » m=Movie.find_by(titre:"Iron Man 2")
-    Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 08:03:42 UTC | Super
-    film | |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    1 row in set
+[55] flix » m=Movie.find_by(titre:"Iron Man 2")
+Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 08:03:42 UTC | Super
+film | |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+1 row in set
 </code></pre>
-            <p>
-                Rajoutons une valeur au champs "date_sortie":
-            </p>
+    <p>
+        Rajoutons une valeur au champs "date_sortie":
+    </p>
 <pre><code class="language-ruby">
-    flix » m.update(date_sortie:"2012-10-21")
-    (0.1ms) begin transaction
-    SQL (0.3ms) UPDATE "movies" SET "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" = 1 [["date_sortie",
-    Sun, 21 Oct 2012], ["updated_at", Fri, 25 Apr 2014 08:04:32 UTC +00:00]]
-    (158.1ms) commit transaction
-    => true
+flix » m.update(date_sortie:"2012-10-21")
+(0.1ms) begin transaction
+SQL (0.3ms) UPDATE "movies" SET "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" = 1 [["date_sortie",
+Sun, 21 Oct 2012], ["updated_at", Fri, 25 Apr 2014 08:04:32 UTC +00:00]]
+(158.1ms) commit transaction
+=> true
+</code></pre>
+<pre><code class="language-ruby ">
+[57] flix » m=Movie.find_by(titre:"Iron Man 2")
+Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+| 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 08:04:32 UTC | Super
+film | 2012-10-21 |
++----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
+1 row in set
+</code></pre>
+    <p>
+        Puis faite de même avec les film « Bat Man » et « Superman », mais ce coup ci en passant les deux
+        valeurs en
+        une seule commande...
+        Pensez à rappelez le bon film avant de faire les rajouts...
+        On rapelle "Bat Man"</p>
+<pre><code class="language-ruby">
+flix » m=Movie.find_by(titre:"Bat man")
+Movie Load (0.6ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Bat man' LIMIT 1
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+| 3 | Bat man | Plus de 12 ans | 400000000.0 | 2014-04-22 16:53:08 UTC | 2014-04-25 08:13:40 UTC | Film avec
+des souris sans cheveux | 2010-08-13 |
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+1 row in set
+</code></pre>
+    <p>
+        Et on le met à jour...</p>
+<pre><code class="language-ruby ">
+flix » m.update(description:"Film avec des souris sans cheveux",date_sortie:"2010-08-13")
+(0.1ms) begin transaction
+SQL (0.5ms) UPDATE "movies" SET "description" = ?, "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" =
+3 [["description", "Film avec des souris sans cheveux"], ["date_sortie", Fri, 13 Aug 2010], ["updated_at",
+Fri, 25 Apr 2014 08:13:40 UTC +00:00]]
+(162.5ms) commit transaction
+=> true
 </code></pre>
     <pre><code class="language-ruby ">
-    [57] flix » m=Movie.find_by(titre:"Iron Man 2")
-    Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Iron Man 2' LIMIT 1
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    | 1 | Iron Man 2 | Plus de 10 ans | 500000000.0 | 2014-04-22 11:26:11 UTC | 2014-04-25 08:04:32 UTC | Super
-    film | 2012-10-21 |
-    +----+------------+----------------+-----------------+-------------------------+-------------------------+-------------+-------------+
-    1 row in set
+[61] flix » m=Movie.find(3)
+Movie Load (0.2ms) SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1 [["id", 3]]
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+| 3 | Bat man | Plus de 12 ans | 400000000.0 | 2014-04-22 16:53:08 UTC | 2014-04-25 08:13:40 UTC | Film avec
+des souris sans cheveux | 2010-08-13 |
++----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
+1 row in set
 </code></pre>
-            <p>
-                Puis faite de même avec les film « Bat Man » et « Superman », mais ce coup ci en passant les deux
-                valeurs en
-                une seule commande...
-                Pensez à rappelez le bon film avant de faire les rajouts...
-                On rapelle "Bat Man"</p>
+    <p>
+        Pour "Super Man"
+    </p>
 <pre><code class="language-ruby">
-    flix » m=Movie.find_by(titre:"Bat man")
-    Movie Load (0.6ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Bat man' LIMIT 1
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    | 3 | Bat man | Plus de 12 ans | 400000000.0 | 2014-04-22 16:53:08 UTC | 2014-04-25 08:13:40 UTC | Film avec
-    des souris sans cheveux | 2010-08-13 |
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    1 row in set
+flix » m=Movie.find_by(titre:"Super Man")
+Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Super Man' LIMIT 1
++----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
+| id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
++----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
+| 4 | Super Man | Plus de 8 ans | 600000000.0 | 2014-04-23 09:52:07 UTC | 2014-04-25 08:17:46 UTC | | |
++----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
+1 row in set
 </code></pre>
-            <p>
-                Et on le met à jour...</p>
-<pre><code class="language-ruby ">
-    flix » m.update(description:"Film avec des souris sans cheveux",date_sortie:"2010-08-13")
-    (0.1ms) begin transaction
-    SQL (0.5ms) UPDATE "movies" SET "description" = ?, "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" =
-    3 [["description", "Film avec des souris sans cheveux"], ["date_sortie", Fri, 13 Aug 2010], ["updated_at",
-    Fri, 25 Apr 2014 08:13:40 UTC +00:00]]
-    (162.5ms) commit transaction
-    => true
-</code></pre>
-            <pre><code class="language-ruby ">
-    [61] flix » m=Movie.find(3)
-    Movie Load (0.2ms) SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1 [["id", 3]]
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    | 3 | Bat man | Plus de 12 ans | 400000000.0 | 2014-04-22 16:53:08 UTC | 2014-04-25 08:13:40 UTC | Film avec
-    des souris sans cheveux | 2010-08-13 |
-    +----+---------+----------------+-----------------+-------------------------+-------------------------+-----------------------------------+-------------+
-    1 row in set
-</code></pre>
-            <p>
-                Pour "Super Man"
-            </p>
+    <p>
+        On le met à jour ...</p>
 <pre><code class="language-ruby">
-    flix » m=Movie.find_by(titre:"Super Man")
-    Movie Load (0.3ms) SELECT "movies".* FROM "movies" WHERE "movies"."titre" = 'Super Man' LIMIT 1
-    +----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
-    | id | titre | autorisation | chiffre_affaire | created_at | updated_at | description | date_sortie |
-    +----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
-    | 4 | Super Man | Plus de 8 ans | 600000000.0 | 2014-04-23 09:52:07 UTC | 2014-04-25 08:17:46 UTC | | |
-    +----+-----------+---------------+-----------------+-------------------------+-------------------------+------------------------+-------------+
-    1 row in set
+flix » m.update(description:"Film avec un mec super",date_sortie:"1980-10-03")
+(0.1ms) begin transaction
+SQL (0.7ms) UPDATE "movies" SET "description" = ?, "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" =
+4 [["description", "Film avec un mec super"], ["date_sortie", Fri, 03 Oct 1980], ["updated_at", Fri, 25 Apr
+2014 08:17:46 UTC +00:00]]
+(131.1ms) commit transaction
+=> true
 </code></pre>
-            <p>
-                On le met à jour ...</p>
+    <h2>3. Mettez à jour la page index.html.erb pour qu'elle affiche les nouveaux champs. Vous savez déjà
+        comment
+        faire ça… !</h2>
+
+    <p>
+        Si vous rafraîchissez actuellement la page index dans votre navigateur, c'est sans surprise que
+        n’apparaîtront pas les champs la description ou la date de sortie des films
+    </p>
+
+    <p>
+        Pour régler cela , rajoutez chaque nouveaux champs dans une balise Ruby <%= nomduchamp %>
+        Vous pouvez mettre ces deux champs à l'intérieur d'une balise paragraphe </p>
 <pre><code class="language-ruby">
-    flix » m.update(description:"Film avec un mec super",date_sortie:"1980-10-03")
-    (0.1ms) begin transaction
-    SQL (0.7ms) UPDATE "movies" SET "description" = ?, "date_sortie" = ?, "updated_at" = ? WHERE "movies"."id" =
-    4 [["description", "Film avec un mec super"], ["date_sortie", Fri, 03 Oct 1980], ["updated_at", Fri, 25 Apr
-    2014 08:17:46 UTC +00:00]]
-    (131.1ms) commit transaction
-    => true
-</code></pre>
-            <h2>3. Mettez à jour la page index.html.erb pour qu'elle affiche les nouveaux champs. Vous savez déjà
-                comment
-                faire ça… !</h2>
-
-            <p>
-                Si vous rafraîchissez actuellement la page index dans votre navigateur, c'est sans surprise que
-                n’apparaîtront pas les champs la description ou la date de sortie des films
-            </p>
-
-            <p>
-                Pour régler cela , rajoutez chaque nouveaux champs dans une balise Ruby <%= nomduchamp %>
-                Vous pouvez mettre ces deux champs à l'intérieur d'une balise paragraphe </p>
-<pre><code class="language-ruby">
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta charset="utf-8"/&gt;
-    &lt;/head&gt;
-    &lt;html&gt;
-    &lt;body&gt;
-    &lt;h1&gt;Liste des films&lt;/h1&gt;
-    &lt;ul&gt;
-    <% @movies.each do |m| %>
-    &lt;li&gt;&lt;strong&gt;<%= m.titre%>&lt;strong&gt; - <%= m.autorisation %> - <%=
-    number_to_currency(m.chiffre_affaire,unit: "€", separator: ",", delimiter: "", format: "%n %u")%>
-    &lt;p&gt;<%= m.description%> - <%= m.date_sortie%>&lt;/li&gt;&lt;/p&gt;
-    <% end %>
-    &lt;/ul&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;/head&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Liste des films&lt;/h1&gt;
+&lt;ul&gt;
+<% @movies.each do |m| %>
+&lt;li&gt;&lt;strong&gt;<%= m.titre%>&lt;strong&gt; - <%= m.autorisation %> - <%=
+number_to_currency(m.chiffre_affaire,unit: "€", separator: ",", delimiter: "", format: "%n %u")%>
+&lt;p&gt;<%= m.description%> - <%= m.date_sortie%>&lt;/li&gt;&lt;/p&gt;
+<% end %>
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-            <p>Cela termine ce rajout de fonctionnalités !
-                Nous avons rajouté des colonnes manquantes à la base de données et ces rajouts se reflètent dans la page
-                de
-                listing des films.</p>
+    <p>Cela termine ce rajout de fonctionnalités !
+        Nous avons rajouté des colonnes manquantes à la base de données et ces rajouts se reflètent dans la page
+        de
+        listing des films.</p>
 
-            <p>
-                Nous n'avons pas touché à l'action « index » de movie_controller.rb Et c'est exactement comme cela doit
-                être.</p>
+    <p>
+        Nous n'avons pas touché à l'action « index » de movie_controller.rb Et c'est exactement comme cela doit
+        être.</p>
 
-            <!-- jQuery -->
-            <script src="js/jquery-1.11.3.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $("#includedContent").load("nav.html");
-                });
-            </script>
-            <!-- Bootstrap JavaScript -->
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#includedContent").load("nav.html");
+        });
+    </script>
+    <!-- Bootstrap JavaScript -->
 
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/prism.js"></script>
-        </div>
-    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prism.js"></script>
+</div>
+</div>
 </div>
 </body>
 </html>
