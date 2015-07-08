@@ -32,21 +32,22 @@
                     nous modifierons cette arborescence et donc cette application.</p>
 
                 <h4>1. Démarrons et créons un répertoire appelé rails_studio et déplaçons nous dans ce répertoire.</h4>
+
                 <p>Si vous êtes sous OsX ou Linux, créez un répertoire (dossier) dans votre répertoire personnel (home -
                     représenté par le caractère tilde - ~) et tapez ces deux commandes à la suite.
-                    <pre><code class="language-bash">mkdir ~/rails_studio
-                        cd ~/rails_studio</code></pre>
+<pre><code class="language-bash">mkdir ~/rails_studio
+cd ~/rails_studio</code></pre>
 
                 Si vous êtes sous Windows, tapez les commandes suivantes.
-                <pre><code class="language-bash">cd c:\
+<pre><code class="language-bash">cd c:\
 mkdir \rails_studio
 cd \rails_studio</code></pre>
 
 
                 <h4>2. Ensuite, utilisez la commande rails pour générer une nouvelle application Rails appelée
                     flix:</h4>
-                    <pre><code class="language-ruby">rails new flix
-                    </code></pre>
+<pre><code class="language-ruby">rails new flix
+</code></pre>
                 <p>Lancer cette commande génère la création de tout les répertoires et fichiers nécessaires à
                     l'intérieur d'un nouveau répertoire flix . Enfin, Bundler se lance automatiquement afin d'installer
                     les gems de base requisent.</p>
@@ -57,11 +58,11 @@ cd \rails_studio</code></pre>
                 <h4>4. Ouvrez le répertoire dans l'éditeur de texte Sublime Text en tapant:</h4>
 
                 <p> sous Osx et Unix:</p>
-                    <pre><code class="language-bash">subl . //(Il y a un espace entre subl et le point)
+<pre><code class="language-bash">subl . //(Il y a un espace entre subl et le point)
 </code></pre>
 
                 <p>Sous Windows, ouvrez Sublime Text et faite</p>
-                <pre><code>File > Open Folder // ... pour ouvrir le répertoire flix.
+<pre><code>File > Open Folder // ... pour ouvrir le répertoire flix.
 </code></pre>
 
                 <h3>2. Lancer l'application.</h3>
@@ -70,13 +71,13 @@ cd \rails_studio</code></pre>
                 <pre><code>rails s //(on peut aussi taper rails server )</code></pre>
                 <p>Cette commande lance un serveur web léger appelé WEBrick. Après quelques vous devriez voir quelque
                     chose comme cela:</p>
-                <pre><code class="language-bash">=> Booting WEBrick
-=> Rails 4.0.0 application starting in development on http://0.0.0.0:3000
-=> Call with -d to detach
-=> Ctrl-C to shutdown server
-[2014-11-20 12:21:37] INFO WEBrick 1.3.1
-[2014-11-20 12:21:37] INFO ruby 1.9.3 (2012-11-10) [x86_64-darwin12.2.0]
-[2014-11-20 12:21:37] INFO WEBrick::HTTPServer#start: pid=80554 port=3000
+<pre><code class="language-bash">=> Booting WEBrick
+    => Rails 4.0.0 application starting in development on http://0.0.0.0:3000
+    => Call with -d to detach
+    => Ctrl-C to shutdown server
+    [2014-11-20 12:21:37] INFO WEBrick 1.3.1
+    [2014-11-20 12:21:37] INFO ruby 1.9.3 (2012-11-10) [x86_64-darwin12.2.0]
+    [2014-11-20 12:21:37] INFO WEBrick::HTTPServer#start: pid=80554 port=3000
 </code></pre>
                 <p>Vous avez à présent un serveur web écoutant sur le port 3000 de votre machine.</p>
 
