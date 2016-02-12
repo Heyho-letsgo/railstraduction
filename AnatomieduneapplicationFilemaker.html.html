@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pourquoi Filemaker. &Eacute;dition : 06 août 2015.">
     <title>Anatomie d'une application Filemaker</title>
     <link href='css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/prism.css">
@@ -39,6 +40,36 @@
 
                         <P>Je décidais donc à ce moment là de revenir sur  <a href="http://www.filemaker.com/fr/" target="_blank"> Filemaker</a>. </P>
 
+ <p>
+      <script language="JavaScript">
+        var dLM = new Date(Date.parse(document.lastModified));
+
+        var day = new Array("Sonntag","Montag","Dienstag",
+            "Mittwoch","Donnerstag","Freitag","Samstag");
+        var month = new Array("Januar","Februar","März","April","Mai","Juni",
+            "Juli","August","September","Oktober","November","Dezember");
+
+        var date = dLM.getDate();
+        var day = day[dLM.getDay()];
+        var year = dLM.getFullYear();
+	var month = month[dLM.getMonth()];
+        var hours = dLM.getHours();
+        var minutes = dLM.getMinutes();
+        var seconds = dLM.getSeconds();
+
+        if (date<10) date = "0"+date;
+        if (month<10) month = "0"+month;
+        if (hours<10) hours = "0"+hours;
+        if (minutes<10) minutes = "0"+minutes;
+        if (seconds<10) seconds = "0"+seconds;
+
+        document.write("Letzte Änderung: "
+            +day+", "+date+". "+month+" "+year+", um "+hours+":"+minutes+":"+seconds);
+      </script>
+    </p>
+
+
+
 
             </div>
         </div>
@@ -58,6 +89,3 @@
 
 </body>
 </html>
-
-
-http://frenchmeteor.meteor.com/
