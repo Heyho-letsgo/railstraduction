@@ -16,8 +16,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Anatomie d'une application Filemaker</h1>
-                    <h2>Pourquoi Filemaker ?</h2>
-                    <p>
+    <p>
       <script language="JavaScript">
         var dLM = new Date(Date.parse(document.lastModified));
 
@@ -29,7 +28,7 @@
         var date = dLM.getDate();
         var day = day[dLM.getDay()];
         var year = dLM.getFullYear();
-	var month = month[dLM.getMonth()];
+	    var month = month[dLM.getMonth()];
         var hours = dLM.getHours();
         var minutes = dLM.getMinutes();
         var seconds = dLM.getSeconds();
@@ -44,6 +43,8 @@
             +day+" "+date+" "+month+" "+year+" à "+hours+":"+minutes+":"+seconds);
       </script>
     </p>
+    
+                    <h2>Pourquoi Filemaker ?</h2>
                         <p>Je viens de passer deux années à explorer "Rails", "Meteor" et après tout ce temps là, 
                         je doute de pouvoir arriver par moi même à la réalisation d'un projet complexe. </p>
                         
@@ -66,34 +67,6 @@
                         <p>Quand en juin 2015, le site que j'avais posé sur meteor.com <a href="https://frenchmeteor.meteor.com/" target="_blank"> frenchmeteor</a> ne fut plus accessible pendant trois semaines.</p>
 
                         <P>Je décidais donc à ce moment là de revenir sur  <a href="http://www.filemaker.com/fr/" target="_blank"> Filemaker</a>. </P>
-
- <p>
-      <script language="JavaScript">
-        var dLM = new Date(Date.parse(document.lastModified));
-
-        var day = new Array("Dimanche","Lundi","Mardi",
-            "Mercredi","jeudi","Vendredi","Samedi");
-        var month = new Array("Janvier","Février","Mars","Avril","Mai","Juin",
-            "Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
-
-        var date = dLM.getDate();
-        var day = day[dLM.getDay()];
-        var year = dLM.getFullYear();
-	var month = month[dLM.getMonth()];
-        var hours = dLM.getHours();
-        var minutes = dLM.getMinutes();
-        var seconds = dLM.getSeconds();
-
-        if (date<10) date = "0"+date;
-        if (month<10) month = "0"+month;
-        if (hours<10) hours = "0"+hours;
-        if (minutes<10) minutes = "0"+minutes;
-        if (seconds<10) seconds = "0"+seconds;
-
-        document.write("Page modifiée le : "
-            +day+" "+date+" "+month+" "+year+" à "+hours+":"+minutes+":"+seconds);
-      </script>
-    </p>
 
 
 
