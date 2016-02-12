@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,109 +10,112 @@
     <link href='css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/prism.css">
 </head>
+
 <body>
-<div id="includedContent"></div>
-<div class="container">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Anatomie d'une application Filemaker</h1>
-    <p>
-      <script language="JavaScript">
-        var dLM = new Date(Date.parse(document.lastModified));
+    <div id="includedContent"></div>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Anatomie d'une application Filemaker</h1>
+                    <p>
+                        <script language="JavaScript">
+                            var dLM = new Date(Date.parse(document.lastModified));
 
-        var day = new Array("Dimanche","Lundi","Mardi",
-            "Mercredi","jeudi","Vendredi","Samedi");
-        var month = new Array("Janvier","Février","Mars","Avril","Mai","Juin",
-            "Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
+                            var day = new Array("Dimanche", "Lundi", "Mardi",
+                                "Mercredi", "jeudi", "Vendredi", "Samedi");
+                            var month = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                                "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre");
 
-        var date = dLM.getDate();
-        var day = day[dLM.getDay()];
-        var year = dLM.getFullYear();
-	    var month = month[dLM.getMonth()];
-        var hours = dLM.getHours();
-        var minutes = dLM.getMinutes();
-        var seconds = dLM.getSeconds();
+                            var date = dLM.getDate();
+                            var day = day[dLM.getDay()];
+                            var year = dLM.getFullYear();
+                            var month = month[dLM.getMonth()];
+                            var hours = dLM.getHours();
+                            var minutes = dLM.getMinutes();
+                            var seconds = dLM.getSeconds();
 
-        if (date<10) date = "0"+date;
-        if (month<10) month = "0"+month;
-        if (hours<10) hours = "0"+hours;
-        if (minutes<10) minutes = "0"+minutes;
-        if (seconds<10) seconds = "0"+seconds;
+                            if (date < 10) date = "0" + date;
+                            if (month < 10) month = "0" + month;
+                            if (hours < 10) hours = "0" + hours;
+                            if (minutes < 10) minutes = "0" + minutes;
+                            if (seconds < 10) seconds = "0" + seconds;
 
-        document.write("Page modifiée le : "
-            +day+" "+date+" "+month+" "+year+" à "+hours+":"+minutes+":"+seconds);
-      </script>
-    </p>
-    
-    <h2>Mon histoire.</h2>
-<p>En 1995, je travaillais pour une société de communication dédiée au agences immobilières. Je vendais des espaces sur des journaux gratuits
-distribués devant les agences. J'étais payé à la commission et quand j'eu 150 clients il devint nécéssaire pour moi d'être sur de ma rémunération. 
-Je tombais par hasard sur FileMaker et sa simplicité me permit de réaliser un logiciel complet de facturation et de gestion de ma clientèle en une cinquantaine d'heures.</p>
-<p>Puis je me rendis compte que l'on pouvait partager l'accès à la solution réalisée, en cliquant sur "Partage en TCPIP". Puis il suffisait d'installer un autre FileMaker sur un autre poste.</p>
-<p>Je me libérais de la saisie de mes encaissements et la transferait à la comptabilité. C'était une petite société, mais rapidement il y eu cinquante commerciaux qui avait chacun entre 
-36 et 150 clients.</p>
-<p>La société finit par éditer à peu près 1000 factures par mois.</p>
+                            document.write("Page modifiée le : " + day + " " + date + " " + month + " " + year + " à " + hours + ":" + minutes + ":" + seconds);
+                        </script>
+                    </p>
 
-<p>En 1997/98, ce fut le début de l'Adsl en France. Je me rendis compte que la vitesse de transfert était suffisante pour faire fonctionner FileMaker en réseau sur l'Adsl.</p>
-<p>Je proposais donc à des anciens clients "Connexion Immobilier" de m'embaucher afin de réaliser pour eux un logiciel de transaction immobilière.</p>
-<p>Pour des raisons de sécurité, de praticité de design et de confort d'utilisation, je leur fit remplacer tout leur pc par des Imac.</p>
-<p>Trois mois après être parti de rien, n'ayant aucune connaissance en développement, 24 négociateurs se connectaient sur le serveur (un Imac 266 Mhz avec 1 Mo de Ram).
-En final, il y eu jusqu'à 120 postes connectés simultanément et aucun problèmes (si ce n'est des pannes de réseau de la part de numéricable).</p>
+                    <h2>Mon histoire.</h2>
+                    <p>En 1995, je travaillais pour une société de communication dédiée au agences immobilières. Je vendais des espaces sur des journaux gratuits distribués devant les agences. J'étais payé à la commission et quand j'eu 150 clients il devint
+                        nécéssaire pour moi d'être sur de ma rémunération. Je tombais par hasard sur FileMaker et sa simplicité me permit de réaliser un logiciel complet de facturation et de gestion de ma clientèle en une cinquantaine d'heures.</p>
+                    <p>Puis je me rendis compte que l'on pouvait partager l'accès à la solution réalisée, en cliquant sur "Partage en TCPIP". Puis il suffisait d'installer un autre FileMaker sur un autre poste.</p>
+                    <p>Je me libérais de la saisie de mes encaissements et la transferait à la comptabilité. C'était une petite société, mais rapidement il y eu cinquante commerciaux qui avait chacun entre 36 et 150 clients.</p>
+                    <p>La société finit par éditer à peu près 1000 factures par mois.</p>
 
-<p>Puis Apple passa d'Os9 à OsX, FileMaker effectua une mofification profonde de son programme et il était à l'époque limité à 150 utilisateurs simultanés.</p>
-<p>Je me dis qu'il était temps d'imaginer une autre solution qui soit posée sur un navigateur.</p>
+                    <p>En 1997/98, ce fut le début de l'Adsl en France. Je me rendis compte que la vitesse de transfert était suffisante pour faire fonctionner FileMaker en réseau sur l'Adsl.</p>
+                    <p>Je proposais donc à des anciens clients "Connexion Immobilier" de m'embaucher afin de réaliser pour eux un logiciel de transaction immobilière.</p>
+                    <p>Pour des raisons de sécurité, de praticité de design et de confort d'utilisation, je leur fit remplacer tout leur pc par des Imac.</p>
+                    <p>Trois mois après être parti de rien, n'ayant aucune connaissance en développement, 24 négociateurs se connectaient sur le serveur (un Imac 266 Mhz avec 1 Mo de Ram). En final, il y eu jusqu'à 120 postes connectés simultanément et aucun
+                        problèmes (si ce n'est des pannes de réseau de la part de numéricable).</p>
 
-<p>L'approche Php/Mysql me semblait la meilleure. Je commençait donc à faire développer une solution (car il m'était impossible de la réaliser moi même).</p>
-<p>En 2002, les prémices de l'application furent lancés, Il fallu pas moins de trois années et 18000 euros pour la réaliser.</p>
-<p>Je louais l'accès à ce Saas avant l'heure, et pendant deux ans, il n'y eu pas de problèmes.</p>
-<p>Puis un jour, le serveur tomba. Le développeur était injoignable et pendant 10 jours mes clients furent coupés de leur clients. Ce fut un moment très dur.</p>
-<p>Le développeur revint et tout rentra  dans l'ordre pendant six mois.</p>
-<p>Six mois plus tard cela recommença. Je décidais d'arrêter, fit un transfert des données sur un tableur pour chaque client et fermais la société.</p>
+                    <p>Puis Apple passa d'Os9 à OsX, FileMaker effectua une mofification profonde de son programme et il était à l'époque limité à 150 utilisateurs simultanés.</p>
+                    <p>Je me dis qu'il était temps d'imaginer une autre solution qui soit posée sur un navigateur.</p>
 
-<h3>Mon sentiment...</h3>
-<p>Ne jamais vendre ce que l'on ne maitrise pas.</p>
+                    <p>L'approche Php/Mysql me semblait la meilleure. Je commençait donc à faire développer une solution (car il m'était impossible de la réaliser moi même).</p>
+                    <p>En 2002, les prémices de l'application furent lancés, Il fallu pas moins de trois années et 18000 euros pour la réaliser.</p>
+                    <p>Je louais l'accès à ce Saas avant l'heure, et pendant deux ans, il n'y eu pas de problèmes.</p>
+                    <p>Puis un jour, le serveur tomba. Le développeur était injoignable et pendant 10 jours mes clients furent coupés de leur clients. Ce fut un moment très dur.</p>
+                    <p>Le développeur revint et tout rentra dans l'ordre pendant six mois.</p>
+                    <p>Six mois plus tard cela recommença. Je décidais d'arrêter, fit un transfert des données sur un tableur pour chaque client et fermais la société.</p>
+
+                    <h3>Mon sentiment...</h3>
+                    <p>Ne jamais vendre ce que l'on ne maitrise pas.</p>
                     <h2>Pourquoi Filemaker ?</h2>
-                        <p>Je viens de passer deux années à explorer  <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> et  <a href="https://www.meteor.com/" target="_blank">Meteor Js</a>.</p>
-                        <p>Après tout ce temps là, je doute de pouvoir arriver par moi même à la réalisation d'un projet complexe. </p>
-                        
-                        <p>Quand je dis explorer, j'ai fais plus que cela, j'ai réalisé une traduction d'un gros tutoriel 
-                        Rails de  <a href="https://online.pragmaticstudio.com/tour/courses/rails/steps/4" target="_blank"> Pragmatic Studio</a> que vous pouvez trouver pour la partie 1 sur  
-                        <a href="https://sites.google.com/site/projetweblove/traduction-rails" target="_blank"> ce lien</a> 
-                        et pour la partie 2 sur  
+                    <p>Je viens de passer deux années à explorer <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> et <a href="https://www.meteor.com/" target="_blank">Meteor Js</a>.</p>
+                    <p>Après tout ce temps là, je doute de pouvoir arriver par moi même à la réalisation d'un projet complexe. </p>
+
+                    <p>Quand je dis explorer, j'ai fais plus que cela, j'ai réalisé une traduction d'un gros tutoriel Rails de <a href="https://online.pragmaticstudio.com/tour/courses/rails/steps/4" target="_blank"> Pragmatic Studio</a> que vous pouvez trouver
+                        pour la partie 1 sur
+                        <a href="https://sites.google.com/site/projetweblove/traduction-rails" target="_blank"> ce lien</a> et pour la partie 2 sur
                         <a href="https://sites.google.com/site/projetweblove/rails-traduction-partie-02" target="_blank"> ce lien</a>.
-                        </p>
-                        
-                        <p>Au bout d'un an, en novembre 2014 je crois, soudainement je n'arrivais plus à uploder ma solution rails sur 
-                        <a href="https://www.heroku.com/" target="_blank"> Heroku</a>.<br>
-                        Pendant un mois j'ai donc revisé mon travail, détérioré, reconstruit pour en fait découvrir en fin de compte qu'Heroku
-                        n'acceptait plus la version 1,9 de Ruby, intégré à Rails, et qu'il fallait passer à la version 2.0.<br>
-                        Pendant ce mois, aucune communication d'Heroku sur ce sujet.<br>
-                        </p>
-                        <p>
+                    </p>
+
+                    <p>Au bout d'un an, en novembre 2014 je crois, soudainement je n'arrivais plus à uploder ma solution rails sur
+                        <a href="https://www.heroku.com/" target="_blank"> Heroku</a>.
+                        <br> Pendant un mois j'ai donc revisé mon travail, détérioré, reconstruit pour en fait découvrir en fin de compte qu'Heroku n'acceptait plus la version 1,9 de Ruby, intégré à Rails, et qu'il fallait passer à la version 2.0.
+                        <br> Pendant ce mois, aucune communication d'Heroku sur ce sujet.
+                        <br>
+                    </p>
+                    <p>
                         A ce moment là, Je me suis orienté sur <a href="https://www.meteor.com/" target="_blank">Meteor Js</a>.
-                        </p>
-                        <p>Quand en juin 2015, le site que j'avais posé sur meteor.com <a href="https://frenchmeteor.meteor.com/" target="_blank"> frenchmeteor</a> ne fut plus accessible pendant trois semaines, 
-                        je décidais donc à ce moment là de revenir sur  <a href="http://www.filemaker.com/fr/" target="_blank"> Filemaker</a>. </P>
+                    </p>
+                    <p>Quand en juin 2015, le site que j'avais posé sur meteor.com <a href="https://frenchmeteor.meteor.com/" target="_blank"> frenchmeteor</a> ne fut plus accessible pendant trois semaines, je décidais donc à ce moment là de revenir sur
+                        <a href="http://www.filemaker.com/fr/" target="_blank"> Filemaker</a>. </P>
+                        
+                        
+                        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." <img src="images/onePageScroll.png" >
+                            
+                        </button> >
+  Popover on top
+</button>
+                        
 
-
-
-
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- jQuery -->
-<script src="js/jquery-1.11.3.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#includedContent").load("nav.html");
-    });
-</script>
-<!-- Bootstrap JavaScript -->
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#includedContent").load("nav.html");
+        });
+    </script>
+    <!-- Bootstrap JavaScript -->
 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/prism.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prism.js"></script>
 
 </body>
+
 </html>
