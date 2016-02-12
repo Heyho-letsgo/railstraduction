@@ -44,10 +44,10 @@
       <script language="JavaScript">
         var dLM = new Date(Date.parse(document.lastModified));
 
-        var day = new Array("Sonntag","Montag","Dienstag",
-            "Mittwoch","Donnerstag","Freitag","Samstag");
-        var month = new Array("Januar","Februar","März","April","Mai","Juni",
-            "Juli","August","September","Oktober","November","Dezember");
+        var day = new Array("Dimanche","Lundi","Mardi",
+            "Mercredi","jeudi","Vendredi","Samedi");
+        var month = new Array("Janvier","Février","Mars","Avril","Mai","Juin",
+            "Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
 
         var date = dLM.getDate();
         var day = day[dLM.getDay()];
@@ -63,7 +63,7 @@
         if (minutes<10) minutes = "0"+minutes;
         if (seconds<10) seconds = "0"+seconds;
 
-        document.write("Letzte Änderung: "
+        document.write("Page modifiée le : "
             +day+", "+date+". "+month+" "+year+", um "+hours+":"+minutes+":"+seconds);
       </script>
     </p>
