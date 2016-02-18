@@ -493,46 +493,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <!-- Modal début -->
-                                    <div id="160211GroupeFiche" class="modal fade" role="dialog">
-                                        <div class="modal-dialog modal-lg">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">160211GroupeFiche.</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <img src="images/160211GroupeFiche.PNG" class="img-responsive" style="width:100%" alt="160211GroupeFiche.">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Trigger the modal with a button -->
-                                    <img src="images/160211GroupeFiche.PNG" class="img-responsive" align="middle" style="height:75%; width:75%" alt="Image du site." data-toggle="modal" data-target="#160211GroupeFiche">
-                                    <!-- Modal fin-->
-                                </div>
-                                <div class="col-md-3">
-                                    <!-- Modal début -->
-                                    <div id="160211AgenceFiche" class="modal fade" role="dialog">
-                                        <div class="modal-dialog modal-lg">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">160211AgenceFiche</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <img src="images/160211AgenceFiche.PNG" class="img-responsive" style="width:100%" alt="160211AgenceFiche">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Trigger the modal with a button -->
-                                    <img src="images/160211AgenceFiche.PNG" class="img-responsive" align="middle" style="height:75%; width:75%" alt="160211AgenceFiche" data-toggle="modal" data-target="#160211AgenceFiche">
+                                    <a href="https://player.vimeo.com/video/155815461"" data-toggle="lightbox">Launch modal</a>
+                                    
+                                    
                                     <!-- Modal fin-->
                                 </div>
                                 <div class="col-md-3">
@@ -587,10 +550,20 @@
             $("#includedContent ").load("nav.html ");
         });
     </script>
+    
+    
     <!-- Bootstrap JavaScript -->
 
     <script src="js/bootstrap.min.js "></script>
     <script src="js/prism.js "></script>
+
+
+<!-- Pour les lightbox -->
+<script>$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+}); </script>
+
 
 </body>
 
