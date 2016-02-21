@@ -14,12 +14,12 @@
     color: #0094BC;
 }
 
-.h1{
+h1{
 	font-size:40px;
 	color:red;
 }
 
-.body{
-	background-color:#bbb;
+body{
+	color:#bbb;
     }
 
