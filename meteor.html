@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pourquoi Filemaker. &Eacute;dition : 06 août 2015.">
+    <title>Anatomie d'une application Filemaker</title>
+    
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/prism.css">
+    <link href="css/custom.css" rel="stylesheet">
+    
+    
+
+
+</head>
+
+<body>
+    <div id="includedContent"></div>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>Anatomie d'une application Filemaker</h1>
+                    </div>
+                    <p>
+                        <script language="JavaScript">
+                            var dLM = new Date(Date.parse(document.lastModified));
+
+                            var day = new Array("Dimanche", "Lundi", "Mardi",
+                                "Mercredi", "jeudi", "Vendredi", "Samedi");
+                            var month = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+                                "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre");
+
+                            var date = dLM.getDate();
+                            var day = day[dLM.getDay()];
+                            var year = dLM.getFullYear();
+                            var month = month[dLM.getMonth()];
+                            var hours = dLM.getHours();
+                            var minutes = dLM.getMinutes();
+                            var seconds = dLM.getSeconds();
+
+                            if (date < 10) date = "0" + date;
+                            if (month < 10) month = "0" + month;
+                            if (hours < 10) hours = "0" + hours;
+                            if (minutes < 10) minutes = "0" + minutes;
+                            if (seconds < 10) seconds = "0" + seconds;
+
+                            document.write("Page modifiée le : " + day + " " + date + " " + month + " " + year + " à " + hours + ":" + minutes + ":" + seconds);
+                        </script>
+                    </p>
+
+                   <p><a href="http://52.28.139.97/fmi/webd/#car" & "target="&\"_blank\">Juste un petit décompte de 20 secondes.</a> Cliquez sur "Compte d'invité" et le bouton "Ok"</p>
+                   <a href="http://www.w3schools.com" target="_blank">Visit W3Schools</a>
+<!-- #################################################################################################### 
+Début du pannel du 11 février 2016 -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Vendredi 5 février 2016</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-1">FmImmo</div>
+                                <div class="col-md-1">120 mn</div>
+                                <div class="col-md-10">Reflexion sur le besoin et création de l'application. Création des tables Groupes Agences et Employés.</div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <!-- Modal début -->
+                                    <div id="160205_TableGroupe" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Table des Groupes</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <img src="images/160205_TableGroupe.PNG" class="img-responsive" style="width:100%" alt="Gestion de la sécurité">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trigger the modal with a button -->
+                                    <img src="images/160205_TableGroupe.PNG" 
+                                    class="img-responsive" 
+                                    align="middle" style="height:75%; width:75%" alt="Table des Groupes" data-toggle="modal" data-target="#160205_TableGroupe">
+                                
+                                    <h4>Table des groupes.<h4>
+                                    <!-- Modal fin-->
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Modal début -->
+                                    <div id="160205_TableAgences" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">160205_TableAgences.</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <img src="images/160205_TableAgences.PNG" class="img-responsive" style="width:100%" alt="160205_TableAgences.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trigger the modal with a button -->
+                                    <img src="images/160205_TableAgences.PNG" class="img-responsive" align="middle" style="height:75%; width:75%" alt="Image du site." data-toggle="modal" data-target="#160205_TableAgences">
+                                    <!-- Modal fin-->
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Modal début -->
+                                    <div id="160205_TableEmployes" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">160205_TableEmployes</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <img src="images/160205_TableEmployes.PNG" class="img-responsive" style="width:100%" alt="160205_TableEmployes">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trigger the modal with a button -->
+                                    <img src="images/160205_TableEmployes.PNG" class="img-responsive" align="middle" style="height:75%; width:75%" alt="160205_TableEmployes" data-toggle="modal" data-target="#160205_TableEmployes">
+                                    <!-- Modal fin-->
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Modal début -->
+                                    <div id="160205_Liens" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">160205_Liens</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <img src="images/160205_Liens.PNG" class="img-responsive" style="width:100%" alt="160205_Liens">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trigger the modal with a button -->
+                                    <img src="images/160205_Liens.PNG" class="img-responsive" align="middle" style="height:75%; width:75%" alt="160205_Liens" data-toggle="modal" data-target="#160205_Liens">
+                                    <!-- Modal fin-->
+
+
+
+
+
+                                </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+<!--Fin du pannel du 05 février 2016  
+#################################################################################################### -->    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.js "></script>
+    <script>
+        $(document).ready(function() {
+            $("#includedContent ").load("nav.html ");
+        });
+    </script>
+    <!-- Bootstrap JavaScript -->
+
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/prism.js "></script>
+
+</body>
+
+</html>
