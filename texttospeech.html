@@ -5,8 +5,42 @@
     </head>
     
     <body>
-        <h1>Issam06</h1>
+        <h1>Issam07</h1>
             <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play" />
+            
+            
+            
+            	
+<script>
+var lang = window.navigator.languages ? window.navigator.languages[0] : null;
+    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+if (lang.indexOf('-') !== -1)
+    lang = lang.split('-')[0];
+if (lang.indexOf('_') !== -1)
+    lang = lang.split('_')[0];
+console.log(lang);
+var say = 'Hello';
+var voice = 'UK English Female';
+switch (lang) {
+    case 'en':
+        say = "Hello";
+        voice = "UK English Female";
+        break;
+    case 'es':
+        say = "Hola";
+        voice = "Spanish Female";
+        break;
+    case 'fr':
+        say = "Bonjour";
+        voice = "French Female";
+        break;
+    default:
+        say = "Hello";
+        voice = "UK English Female";
+        break;
+}
+setTimeout(responsiveVoice.speak(say, voice),15000);
+</script>
         
     </body>
 </html>
