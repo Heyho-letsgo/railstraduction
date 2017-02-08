@@ -1,46 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>    
-    </head>
-    
-    <body>
-    <h2>https://responsivevoice.com/pricing/</h2>
-            <input onclick="responsiveVoice.speak('Hello World');" type="button" value="Play" />
-            
-            
-            
-            	
-<script>
-var lang = window.navigator.languages ? window.navigator.languages[0] : null;
-    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
-if (lang.indexOf('-') !== -1)
-    lang = lang.split('-')[0];
-if (lang.indexOf('_') !== -1)
-    lang = lang.split('_')[0];
-console.log(lang);
-var say = 'Hello';
-var voice = 'UK English Female';
-switch (lang) {
-    case 'en':
-        say = "Hello";
-        voice = "UK English Female";
-        break;
-    case 'es':
-        say = "Hola";
-        voice = "Spanish Female";
-        break;
-    case 'fr':
-        say = "Bonjour";
-        voice = "French Female";
-        break;
-    default:
-        say = "Hello";
-        voice = "UK English Female";
-        break;
-}
-setTimeout(responsiveVoice.speak(say, voice),15000);
-</script>
-        
-    </body>
-</html>
+  <script type="text/javascript">
+     var u = new SpeechSynthesisUtterance();
+     u.text = 'Bonjour André, je suis vraiment content de te voir ! Quel dommage que Farez ne soit pas là !';
+     u.lang = 'fr-FR';
+     u.rate = 1.2;
+     u.onend = function(event) { alert('Finished in ' + event.elapsedTime + ' seconds.'); }
+     speechSynthesis.speak(u);
+  </script>
