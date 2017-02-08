@@ -1,8 +1,10 @@
+  <h1>https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html#tts-section</h1>
   <script type="text/javascript">
      var u = new SpeechSynthesisUtterance();
-     u.text = 'Bonjour André, je suis vraiment content de te voir ! Quel dommage que Farez ne soit pas là !';
+     u.text = 'Bonjour André!';
      u.lang = 'fr-FR';
      u.rate = 1.2;
      u.onend = function(event) { alert('Finished in ' + event.elapsedTime + ' seconds.'); }
      speechSynthesis.speak(u);
   </script>
+  
