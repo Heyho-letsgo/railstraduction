@@ -88,11 +88,17 @@
 	//var calcul2 =(5700/2900)*calcul1;//réponse 2
 	//var calcul3 = nbrSalarie *2//réponse 3 */
 	var ubIn = pxHtContrat / (2000 * smic)//réponse ubIn
-	var ubOut = pxHtContrat / (1600*9.76)//réponse ub
+	var ubOut = pxHtContrat / (1600* smic)//réponse ub
 	//Affiche le résultat dans "mon_div"
 	//Math.round() arrondit à l'entier le plus proche
-	document.getElementById('mon_div').innerHTML = 'UB : '+ubIn.toFixed(2)+'';
+	document.getElementById('mon_div').innerHTML = 'Si la prestation a été effectuée dans nos locaux UB : '+ubIn.toFixed(2)+'</br>result02 : '+ubOut.toFixed(2)+'';
+	
 }
+
+
+//	document.getElementById('mon_div').innerHTML = 'Saisie utilisateur : '+somme+'<br/>Calcul 1 : '+Math.round(calcul1)+'<br/>Calcul 2 : '+Math.round(calcul2)+'<br/>Calcul 3 : '+Math.round(calcul3)+''; 
+
+
 	
 </script>
 
