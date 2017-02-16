@@ -9,9 +9,9 @@
         var speech = new SpeechSynthesisUtterance();
         speech.text = "Ceci est un test";
         speech.lang = "fr-FR";
-        speech.onend = function(event){
-          console.log('Text to voice API: Synthesis finished in ' + event.elapsedTime +' seconds')  
-        };
+        //speech.onend = function(event){
+        //  console.log('Text to voice API: Synthesis finished in ' + event.elapsedTime +' seconds')  
+        // };
         speechSynthesis.speak(speech);
         
     </script>    
