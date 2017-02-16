@@ -2,20 +2,22 @@
 <!-- https://youtu.be/DOtkNxmg9QY -->
 <head>
     <title>Text to speech</title>
-    
+    <meta charset="utf-8">
+  <!-- https://youtu.be/z4PDJcw8yUI -->  
+      <script type="text/javascript">
+        
+        var speech = new SpeechSynthesisUtterance();
+        speech.text = "Ceci est un test";
+        speech.lang = "fr-FR";
+        speech.Synthesis.speak(speech);
+        
+    </script>    
+
+
 </head>
 <html>
     <body>
-        a
-    <script>
-  <script type="text/javascript">
-     var u = new SpeechSynthesisUtterance();
-     u.text = 'Hello World';
-     u.lang = 'en-US';
-     u.rate = 1.2;
-     u.onend = function(event) { alert('Finished in ' + event.elapsedTime + ' seconds.'); }
-     speechSynthesis.speak(u);
-  </script>
+
 
 
 
