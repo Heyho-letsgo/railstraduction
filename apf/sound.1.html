@@ -7,41 +7,14 @@
 <html>
     <body>
     <script>
- document.getElementById("speak").onclick = function(){
-	speechRs.speechinit('Google FR French Female',function(e){
-		  speechRs.speak("Bonjour André", function() {
-
-			}, false);
-	 });
-}
- 
- document.getElementById("start").onclick = function(){
-    speechRs.rec_start('en-IN',function(final_transcript,interim_transcript){
-        document.getElementById("e").innerHTML=final_transcript+interim_transcript;
-    });
-	 
-	 speechRs.on("I am fine",function(){ 
-      alert("user spoken I am fine");
-    }); 
-	
- }
- 
- document.getElementById("stop").onclick = function(){
-    speechRs.rec_stop();
- }
-</script>
-
-
-b
-
-<p id="e">
-
-</p>
-<button id="speak">Speak</button>
-<button id="start">Start</button>
-<button id="stop">Stop</button>
-
-
+  <script type="text/javascript">
+     var u = new SpeechSynthesisUtterance();
+     u.text = 'Hello World';
+     u.lang = 'en-US';
+     u.rate = 1.2;
+     u.onend = function(event) { alert('Finished in ' + event.elapsedTime + ' seconds.'); }
+     speechSynthesis.speak(u);
+  </script>
 
 
 
