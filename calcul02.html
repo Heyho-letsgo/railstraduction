@@ -26,7 +26,7 @@
 <!-<label for="nbrSalarie">Nombre de salariés</label>
 <p><input type="text" id="nbrSalarie" class="form-control" placeholder="Nombre de Salarié" value=""/></p> -->
 <label for="pxHtContrat">Prix hors taxe de la facture</label>
-<p><input type="text" id="pxHtContrat" class="form-control" placeholder="Prix hors taxe de la facture" value=""/></p>
+<p><input type="number" id="pxHtContrat" class="form-control" placeholder="Saisir un nombre sans virgule" value=""/></p>
 
 <!--
 <div class="radio">
@@ -91,7 +91,7 @@
 	var ubOut = pxHtContrat / (1600* smic)//réponse ub
 	//Affiche le résultat dans "mon_div"
 	//Math.round() arrondit à l'entier le plus proche
-	document.getElementById('mon_div').innerHTML = 'Si la prestation a été effectuée dans <strong>nos</strong> locaux, votre unité bénéficiare est de  : '+ubIn.toFixed(3)+'</br>Si la prestation a été effectuée dans <strong>vos</strong> locaux, votre unité bénéficiare est de : '+ubOut.toFixed(2)+'';
+	document.getElementById('mon_div').innerHTML = 'Si la prestation a été effectuée dans <strong>nos</strong> locaux, votre unité bénéficiare est potentiellement de  : '+ubIn.toFixed(3)+'</br>Si la prestation a été effectuée dans <strong>vos</strong> locaux, votre unité bénéficiare est potentiellement de : '+ubOut.toFixed(2)+'';
 	
 }
 
