@@ -27,11 +27,11 @@
 <body>
     
 <div class="container">
+    <div class="jumbotron">
     <ul>
         <li id="menu">Logo  APF ENTREPRISES PARIS à insérer</li>
-        <li>UNITÉS BENEFICIAIRES</li>
+        <a href="#nite-beneficiaire"><li>UNITÉS BENEFICIAIRES</li></a>
         <a href="#competences"><li>COMPETENCES</li></a>
-        
             <ul>
                 <a href="#prestations_tertiaires"><li>Prestations tertiaires chez nos clients</li></a>
                 <a href="#back_office"><li>Back Office</li></a>
@@ -43,12 +43,32 @@
         <li>PARTENAIRES</li>
         <a href = "#contact"><li>CONTACT</li></a>
     </ul>
-    
+    </div>
 <!--  UNITÉS BENEFICIAIRES  -->    
 
+<h1 id="unite-beneficiaire">UNITÉS BENEFICIAIRES
+         <a href="#menu"> <span title="Retour au menu en haut de la page." class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a></h1>
+
+<h2>COMMENT calculer vos avantages fiscaux ?</h2>
+<p>Les entreprises de plus de 20 salariés sont tenues à une obligation d’emploi de travailleurs handicapés (6% de leur effectif en équivalent temps plein), selon la Loi du 10 juillet 1987 modifiée par la loi du 11 février 2005. En faisant appel aux services de nos entreprises adaptées, elles peuvent s’acquitter partiellement de la contribution à l’ « Agefip</p>
+
+	<div class="container">
+		 <div class="row">
+		 	<div class="col-sm-12">
+<form id="form" name="form">
+	<div class="form-group">
+<label for="pxHtContrat">Prix hors taxe de la facture</label>
+<p><input type="number" id="pxHtContrat" class="form-control" placeholder="Saisir un nombre sans virgule" min="1" required ="required"value=""/></p>
+<input type="button" value="Calcul" class="btn btn-default" onclick="javascript:AFFICHE();">
+</form>
+
+<div id="mon_div"></div>
+</div>
+</div>
+</div>
+</div>
 
 
-<iframe src="/calcul02.html" style="border:none;"></iframe>
     
     
     
@@ -267,4 +287,51 @@
         
     
 </body>
+
+<script>
+	function AFFICHE(calcul){
+	// On déclare les variables
+	//var nbrSalarie, text;
+	//var pxHtContrat, text;
+	var txHoraireSmic, text;	
+	//var nbrSalarie = document.getElementById('nbrSalarie').value;
+	var pxHtContrat = document.getElementById('pxHtContrat').value;
+	var smic = 9.76
+	
+	//var somme = document.getElementById('somme').value;
+	//on remplace la virgule par un point
+/*somme = somme.replace(",",".");	
+	Si le champ est vide
+	if(somme == ''){
+		document.getElementById('mon_div').innerHTML = 'On ne va pas aller bien loin sans saisie!'; 
+		document.getElementById("somme").style.border = "1px solid red"; 
+		return false;
+	}
+	//On teste si la valeur est de type numérique
+	else if (isNaN(somme))
+	{
+		document.getElementById('mon_div').innerHTML = 'Merci de saisir un chiffre!'; 
+		return false;
+	}	
+	//tout est ok
+	else
+	// var calcul1 = (1.8*somme);//réponse 1
+	//var calcul2 =(5700/2900)*calcul1;//réponse 2
+	//var calcul3 = nbrSalarie *2//réponse 3 */
+	var ubIn = pxHtContrat / (2000 * smic)//réponse ubIn
+	var ubOut = pxHtContrat / (1600* smic)//réponse ub
+	//Affiche le résultat dans "mon_div"
+	//Math.round() arrondit à l'entier le plus proche
+	document.getElementById('mon_div').innerHTML = 'Si la prestation a été effectuée dans <strong>nos</strong> locaux, votre unité bénéficiaire est potentiellement de  : '+ubIn.toFixed(3)+'</br>Si la prestation a été effectuée dans <strong>vos</strong> locaux, votre unité bénéficiaire est potentiellement de : '+ubOut.toFixed(3)+'';
+	
+}
+
+
+//	document.getElementById('mon_div').innerHTML = 'Saisie utilisateur : '+somme+'<br/>Calcul 1 : '+Math.round(calcul1)+'<br/>Calcul 2 : '+Math.round(calcul2)+'<br/>Calcul 3 : '+Math.round(calcul3)+''; 
+
+
+	
+</script>
+
+
 </html>

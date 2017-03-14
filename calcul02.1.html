@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script language="JavaScript" type="text/javascript">
+</script>
+
+</head>
+
+<body bgcolor="#E6E6FA">
+	<div class="container">
+		 <div class="row">
+		 	<div class="col-sm-12">
+<form id="form" name="form">
+	<div class="form-group">
+<!-- 		<label for="somme">Somme</label>
+<p><input type="text" class="form-control" id="somme" value=""/></p>
+<!-<label for="nbrSalarie">Nombre de salariés</label>
+<p><input type="text" id="nbrSalarie" class="form-control" placeholder="Nombre de Salarié" value=""/></p> -->
+<label for="pxHtContrat">Prix hors taxe de la facture</label>
+<p><input type="number" id="pxHtContrat" class="form-control" placeholder="Saisir un nombre sans virgule" min="1" required ="required"value=""/></p>
+
+<!--
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Prestation effectuée dans nos locaux
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        Prestation effectuée dans nos locaux
+
+  </label>
+</div>
+
+-->
+
+
+<input type="button" value="Calcul" class="btn btn-default" onclick="javascript:AFFICHE();">
+</form>
+
+<div id="mon_div"></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+
+<script>
+	function AFFICHE(calcul){
+	// On déclare les variables
+	//var nbrSalarie, text;
+	//var pxHtContrat, text;
+	var txHoraireSmic, text;	
+	//var nbrSalarie = document.getElementById('nbrSalarie').value;
+	var pxHtContrat = document.getElementById('pxHtContrat').value;
+	var smic = 9.76
+	
+	//var somme = document.getElementById('somme').value;
+	//on remplace la virgule par un point
+/*somme = somme.replace(",",".");	
+	Si le champ est vide
+	if(somme == ''){
+		document.getElementById('mon_div').innerHTML = 'On ne va pas aller bien loin sans saisie!'; 
+		document.getElementById("somme").style.border = "1px solid red"; 
+		return false;
+	}
+	//On teste si la valeur est de type numérique
+	else if (isNaN(somme))
+	{
+		document.getElementById('mon_div').innerHTML = 'Merci de saisir un chiffre!'; 
+		return false;
+	}	
+	//tout est ok
+	else
+	// var calcul1 = (1.8*somme);//réponse 1
+	//var calcul2 =(5700/2900)*calcul1;//réponse 2
+	//var calcul3 = nbrSalarie *2//réponse 3 */
+	var ubIn = pxHtContrat / (2000 * smic)//réponse ubIn
+	var ubOut = pxHtContrat / (1600* smic)//réponse ub
+	//Affiche le résultat dans "mon_div"
+	//Math.round() arrondit à l'entier le plus proche
+	document.getElementById('mon_div').innerHTML = 'Si la prestation a été effectuée dans <strong>nos</strong> locaux, votre unité bénéficiaire est potentiellement de  : '+ubIn.toFixed(3)+'</br>Si la prestation a été effectuée dans <strong>vos</strong> locaux, votre unité bénéficiaire est potentiellement de : '+ubOut.toFixed(3)+'';
+	
+}
+
+
+//	document.getElementById('mon_div').innerHTML = 'Saisie utilisateur : '+somme+'<br/>Calcul 1 : '+Math.round(calcul1)+'<br/>Calcul 2 : '+Math.round(calcul2)+'<br/>Calcul 3 : '+Math.round(calcul3)+''; 
+
+
+	
+</script>
+
+
+</html>
