@@ -294,25 +294,21 @@
 </div>    
 
 
-<h1>My First Google Map</h1>
+<div id="map"></div>
+    <script>
 
-<div id="map" style="width:400px;height:400px;background:yellow"></div>
-
-<script>
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {
-    center: new google.maps.LatLng(51.5, -0.2), zoom: 10
-  };
-  var map = new google.maps.Map(mapCanvas, mapOptions);
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 36.964, lng: -122.015},
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+  });
+  map.setTilt(45);
 }
-</script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArIkFO_b77Luaj11kkPI2plihrbrsjcbk"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArIkFO_b77Luaj11kkPI2plihrbrsjcbk&signed_in=true&callback=initMap"></script>
 
 
 
