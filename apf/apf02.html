@@ -20,7 +20,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArIkFO_b77Luaj11kkPI2plihrbrsjcbk"></script>
 
         <meta name="google-site-verification" content="google-site-verification=JBlab_fga5CzekEgPU0KXFEymsoWTqyI8fAbsqIaJeU" />
     </head>
@@ -292,6 +292,31 @@
     </address>
 
 </div>    
+<script>
+    
+    $(function () {
+
+    function initMap() {
+
+        var location = new google.maps.LatLng(50.0875726, 14.4189987);
+
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+            center: location,
+            zoom: 16,
+            panControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initMap);
+});
+    
+    
+    
+</script>
 
     </div>
         
