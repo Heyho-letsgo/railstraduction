@@ -20,8 +20,6 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- https://responsivevoice.org/ -->
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>       <meta name="google-site-verification" content="google-site-verification=JBlab_fga5CzekEgPU0KXFEymsoWTqyI8fAbsqIaJeU" />
     </head>
 <body>
     <br>
@@ -30,8 +28,30 @@
   
     <img class="img-responsive" id="menu" src="https://static.wixstatic.com/media/ee9f21_02bd101391f8420e8d8d269a3fd9eef0~mv2.png/v1/fill/w_373,h_78,al_c,usm_0.66_1.00_0.01/ee9f21_02bd101391f8420e8d8d269a3fd9eef0~mv2.png" alt="logo apfparis"><br>
         
-    <input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
-    
+    <script>
+        var audio = new Audio();
+audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=en&q=Hello%20World.';
+audio.play();
+    </script>
+    <script>
+        var msg = new SpeechSynthesisUtterance();
+var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[10]; // Note: some voices don't support altering params
+msg.voiceURI = 'native';
+msg.volume = 1; // 0 to 1
+msg.rate = 1; // 0.1 to 10
+msg.pitch = 0; //0 to 2
+msg.text = 'Les entreprises de plus de 20 salariés sont tenues à une obligation d’emploi de travailleurs handicapés' 
+            +'(six pour cent de leur effectif en équivalant temps plein), selon la Loi du 10 juillet 1987 modifiée par la loi du 11 février 2005.  ';
+msg.lang = 'fr-FR';
+
+msg.onend = function(e) {
+  console.log('Finished in ' + event.elapsedTime + ' seconds.');
+};
+
+speechSynthesis.speak(msg);
+        
+    </script>
     <ul>
         <a href="#unite-beneficiaire"><li>UNITÉS BENEFICIAIRES</li></a>
         <a href="#competences"><li>COMPETENCES</li></a>
@@ -59,7 +79,10 @@
          <a href="#menu"> <span title="Retour au menu en haut de la page." class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a></h1>
 
 <h2>COMMENT calculer vos avantages fiscaux ?</h2>
-<p>Les entreprises de plus de 20 salariés sont tenues à une obligation d’emploi de travailleurs handicapés (6% de leur effectif en équivalent temps plein), selon la Loi du 10 juillet 1987 modifiée par la loi du 11 février 2005. En faisant appel aux services de nos entreprises adaptées, elles peuvent s’acquitter partiellement de la contribution à l’ « Agefip</p>
+<p>Les entreprises de plus de 20 salariés sont tenues à une obligation d’emploi de travailleurs handicapés 
+(6% de leur effectif en équivalent temps plein), selon la Loi du 10 juillet 1987 modifiée par la loi du 11 
+février 2005. En faisant appel aux services de nos entreprises adaptées, elles peuvent s’acquitter 
+partiellement de la contribution à l’Agefip.</p>
 
 	<div class="container-fluid">
 		 <div class="row">
