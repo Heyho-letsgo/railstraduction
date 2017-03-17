@@ -9,24 +9,24 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="373px"
-   height="78px"
-   viewBox="0 0 373 78"
+   width="74mm"
+   height="52mm"
+   viewBox="0 0 74 52"
    version="1.1"
    id="SVGRoot"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="test01EnSvg.svg">
+   sodipodi:docname="01.svg">
   <sodipodi:namedview
      id="base"
-     pagecolor="#666666"
+     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3726542"
-     inkscape:cx="186.5"
-     inkscape:cy="39"
-     inkscape:document-units="px"
+     inkscape:zoom="2"
+     inkscape:cx="139.5"
+     inkscape:cy="98"
+     inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
@@ -35,9 +35,9 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <defs
-     id="defs27" />
+     id="defs4485" />
   <metadata
-     id="metadata30">
+     id="metadata4488">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -54,14 +54,16 @@
      inkscape:label="Calque 1">
     <flowRoot
        xml:space="preserve"
-       id="flowRoot3688"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.87293834,0,0,2.0507587,-84.823062,-304.49696)"><flowRegion
-         id="flowRegion3690"><rect
-           id="rect3692"
-           width="445.71432"
-           height="54.285717"
-           x="100"
-           y="142.51968" /></flowRegion><flowPara
-         id="flowPara3694">APF Entreprises Paris</flowPara></flowRoot>  </g>
+       id="flowRoot5046"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion5048"><rect
+           id="rect5050"
+           width="250"
+           height="145"
+           x="19"
+           y="28.535431" /></flowRegion><flowPara
+         id="flowPara5052">APF</flowPara><flowPara
+         id="flowPara5054">Entreprises</flowPara><flowPara
+         id="flowPara5056">Paris</flowPara></flowRoot>  </g>
 </svg>
