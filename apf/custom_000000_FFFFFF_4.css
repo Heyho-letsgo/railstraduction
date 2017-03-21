@@ -1,0 +1,37 @@
+*{background-color:#000000;color:#FFFFFF;border-color:#FFFFFF;cursor:url(/design/cursors/arrow_cursor_4.cur), default}
+body{font-size:220%}
+abbr,acronym{border-bottom-color:#FFFFFF}
+fieldset,button,.cdlButtons input{border-color:#FFFFFF}
+select{border-color:#FFFFFF}
+input.cdlInputText,.cdlInputText input{border-color:#FFFFFF}
+input.cdlInputText::-webkit-input-placeholder,.cdlInputText input::-webkit-input-placeholder{color:#FFFFFF;opacity:.8}
+input.cdlInputText:-moz-placeholder,.cdlInputText input:-moz-placeholder{color:#FFFFFF;opacity:.8}
+input.cdlInputText::-moz-placeholder,.cdlInputText input::-moz-placeholder{color:#FFFFFF;opacity:.8}
+input.cdlInputText:-ms-input-placeholder,.cdlInputText input:-ms-input-placeholder{color:#FFFFFF;opacity:.8}
+input.cdlInputText:focus::-webkit-input-placeholder,.cdlInputText input:focus::-webkit-input-placeholder{opacity:0}
+input.cdlInputText:focus:-moz-placeholder,.cdlInputText input:focus:-moz-placeholder{opacity:0}
+input.cdlInputText:focus::-moz-placeholder,.cdlInputText input:focus::-moz-placeholder{opacity:0}
+input.cdlInputText:focus:-ms-input-placeholder,.cdlInputText input:focus:-ms-input-placeholder{opacity:0}
+textarea{border-color:#FFFFFF}
+table{border-color:#FFFFFF}
+th,td{border-color:#FFFFFF}
+a{cursor:url(/design/cursors/pointer_cursor_4.cur), pointer}
+a *{cursor:url(/design/cursors/pointer_cursor_4.cur), pointer}
+.cdlButtons input{cursor:url(/design/cursors/pointer_cursor_4.cur), pointer}
+button,button *{cursor:url(/design/cursors/pointer_cursor_4.cur), pointer}
+.cdlUtilLinks input{cursor:url(/design/cursors/pointer_cursor_4.cur), pointer}
+.cdlAudioObject{border-color:#FFFFFF}
+.cdlCadre{border-color:#FFFFFF}
+.cdlCadre hr{background-color:#FFFFFF}
+.cdlInversedColor{background-color:#FFFFFF !important;color:#000000 !important}
+.cdlInversedColor *{background-color:#FFFFFF !important;color:#000000 !important;border-color:#000000 !important}
+.cdlAllPageContainer,.protectedPageLoginContent,.documentContent,.exitContent,.errorContent{margin-top:10px;padding-top:100px !important}
+:root .cdlInput_radio,:root .cdlInput_checkbox{border-color:#FFFFFF;border-width:11px;width:72px !important;height:72px;margin-left:-72px}
+:root .cdlInput_radio,:root .cdlInput_checkbox,:root .cdlInput_radio strong,:root .cdlInput_checkbox strong{border-radius:72px;-moz-border-radius:72px;-WebKit-border-radius:72px;-khtml-border-radius:72px}
+:root .cdlInput_radio strong,:root .cdlInput_checkbox strong{border-color:#000000}
+:root .cdlInput_checkbox{border-radius:11px;-moz-border-radius:11px;-WebKit-border-radius:11px;-khtml-border-radius:11px}
+:root .cdlInput_checkbox strong{border-radius:3px;-moz-border-radius:3px;-WebKit-border-radius:3px;-khtml-border-radius:3px}
+:root input[type="radio"]:checked + .cdlInput_radio strong,:root input[type="checkbox"]:checked + .cdlInput_checkbox strong{background-color:#FFFFFF}
+:root input[type="radio"],:root input[type="checkbox"]{width:72px !important;height:72px}
+.cdlSelectInput span{background-color:#000000}
+.cdlSelectInput span:after{border-top-color:#FFFFFF}
